@@ -1,0 +1,80 @@
+.navbar {
+    height: 55px;
+    display: grid;
+    grid-template-columns: .5fr 1fr .5fr;
+    align-items: center;
+    padding: 0 10%;
+    z-index: 1;
+    position: fixed;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+.navbar.scrolled {
+
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+.navbar img {
+    height: 36px;
+    cursor: pointer;
+}
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+.navbar a {
+    text-decoration: none;
+    color: #ff4372;
+    margin: 0 15px;
+    transition: color 0.3s, background-color 0.3s, padding 0.3s, border-radius 0.3s;
+}
+.navbar a:hover {
+    color: #fffefe;
+    background-color: rgb(255, 64, 109); 
+    padding: 9px; 
+    border-radius: 5px; 
+
+}
+.icon {
+    font-weight: bolder; /* Peso del texto */
+    color: #ff4372; /* Color del texto */
+}
+.navbar_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 75px 0px 0px;
+}
+.navbar_icon img {
+    height: 50px; /* Ajusta la altura según sea necesario */
+    width: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 8px; /* Espacio entre la imagen y el texto */
+}
+.navbar__menu {
+    justify-self: center;
+    font-size: medium;
+    font-weight: 600;
+    margin-left: 34px;
+}
+.navbar__buttons {
+    justify-self: end;   
+}
+.cart-indicator {
+    background: #8b95c9;
+    font-size: x-small;
+    font-weight: 700;
+    padding: 1px 4.5px;
+    border-radius: 50%;
+    position: relative;
+    top: -8px;
+    right: 36%;
+    color: #e6e8da;
+}
+.hidden {
+    display: none;
+}
