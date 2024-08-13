@@ -1,1 +1,35 @@
-<p>login works!</p>
+<section class="sing-up">
+    <div class="sing-up__title">
+        <h2>
+            Iniciar sesión
+        </h2>
+        <p>
+            ¿Aún no tienes cuenta? <a routerLink="/register">Regístrate</a>
+        </p>
+    </div>
+    <div class="sing-up__form">
+        <form (submit)="onSubmit($event)">
+            <label>Email:</label>
+            <input [(ngModel)]="email" name="email" type="email" placeholder="Ingresa tu correo electrónico">
+
+            <br>
+
+            <label>Contraseña:</label>
+            <input [(ngModel)]="password" name="password" type="password" placeholder="Ingresa tu contraseña">
+
+            <a href="">¿Olvidaste tu contraseña?</a>
+
+            <button type="submit" value="send">
+                Iniciar sesión
+            </button>
+            
+            <p>
+                O conectate con:
+            </p>
+        </form>
+    </div>
+    <div class="sing-up__logos">
+        <a href="https://www.google.com/" target="_blank"><i class="fa-brands fa-google"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+</section>
