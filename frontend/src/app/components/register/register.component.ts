@@ -1,12 +1,42 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  email: string = ''
+  password: string = ''
 
+  constructor(private authService: AuthService, private router: Router) {}
+
+  onSubmit(event: Event): void {
+    event.preventDefault()
+    this.authService.register(this.email, this.password).subscribe(
+      response => {
+        if(response.ok){
+          Swal.fire('User registered', response.msg, 'success')
+          this.router.navigate(['/login'])
+        } else {
+          Swal.fire('Error', response.error.msg, 'error')
+        }
+      }, 
+      error => {
+        if(typeof error.error.msg != 'string'){
+          Swal.fire('Error', error.error.msg.password.msg, 'error')
+        }
+        else{
+          Swal.fire('Error', error.error.msg, 'error')
+        }
+        console.log(error)
+      }
+    )
+  }
 }
