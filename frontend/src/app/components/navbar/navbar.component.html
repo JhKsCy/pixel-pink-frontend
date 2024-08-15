@@ -1,4 +1,6 @@
 <nav class="navbar" id="navbar_container">
+
+<nav [ngClass]="{'navbar': true, 'scrolled': isScrolled}" id="navbar_container">
     <div class="navbar_icon">
         <img src="https://jhkscy.github.io/pixel-pink/assets/img/icon-wb.png" alt="">
         <div class="icon">PIXEL<br>PINK</div>
@@ -6,38 +8,18 @@
     <div class="navbar_menu">
         <div id="menu">
             <ul>
-                <li>
-                    <a href="">Inicio</a>
-                </li>
-                <li>
-                    <a href="">Categorias</a>
-                </li>
-                <li>
-                    <a href="">Ultima colección</a>
-                </li>
-                <li>
-                    <a href="">Preventa</a>
-                </li>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="">Categorias</a></li>
+                <li><a href="">Ultima colección</a></li>
+                <li><a href="">Preventa</a></li>
             </ul>
         </div>
     </div>
     <div class="navbar_buttons">
         <ul>
-            <li>
-                <a href="">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa-solid fa-user"></i>
-                </a>
-            </li>
+            <li><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-basket-shopping"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-user"></i></a></li>
         </ul>
     </div>
 </nav>
