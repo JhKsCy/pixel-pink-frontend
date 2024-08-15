@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    margin-bottom: 0 !important; 
     padding: 0;
     font-family: "Inter", sans-serif;
 }
@@ -39,8 +38,4 @@ body {
 @font-face {
     font-family: 'Hipnouma';
     src: url('/assets/fonts/Hipnouma.ttf') format('truetype');
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 10d8766425a0be7db58c4353aacd8eff0a4352f9

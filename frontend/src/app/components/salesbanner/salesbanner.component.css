@@ -1,0 +1,50 @@
+.sales {
+    height: 470px;
+    width: 90%;
+    margin: 100px 5%;
+    padding: 1.5%;
+    background-image: url(/img/header-yena-1.png);
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: end;
+    justify-content: end;
+}
+.sales__star-button {
+    height: 220px;
+    width: 220px;
+    background: transparent;
+    border: none; 
+    cursor: pointer; 
+    transition: all .2s;
+}
+.sales__star-button:hover {
+    transform: scale(1.15);
+}
+.sales__star-button img {
+    height: 100%;
+}
+.sales__star-button p {
+    position: relative;
+    top: -65%;
+    right: -1%;
+    rotate: -10deg;
+    font-family: "Anton", sans-serif;
+    font-size: xxx-large;
+    color: #e6e8da;
+}
+.sales a {
+    font-family: "Anton", sans-serif;
+    color: #e6e8da;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 110px;
+    text-shadow: #ff4372 -4px 3px;
+    line-height: 135px;
+    position: relative;
+    top: 32%;
+    right: 220%;
+}

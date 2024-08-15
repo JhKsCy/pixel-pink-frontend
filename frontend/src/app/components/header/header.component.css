@@ -1,0 +1,47 @@
+.header {
+    height: 540px;
+    margin-top: 55px;
+}
+.header__info {
+    position: relative;
+    top: -55px;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    height: 100%;
+    font-size: 75px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+#oneLineLink {
+    top: 37%;
+}
+.header__info a {
+    font-family: "Anton", sans-serif;
+    color: #e6e8da;
+    text-decoration: underline;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    font-size: 110px;
+    text-shadow: #ff4372 -4px 3px;
+    line-height: 135px;
+}
+.header__carrousel button {
+    width: 10%;
+}
+.carousel {
+    height: 100%;
+    overflow: hidden;
+}
+.carousel-inner {
+    height: 100%;
+}
+.carousel-item {
+    height: 100%;
+}
+.carousel-item img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}

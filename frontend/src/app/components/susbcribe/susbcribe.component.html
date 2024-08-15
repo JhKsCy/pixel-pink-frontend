@@ -1,0 +1,27 @@
+<section class="suscribe">
+    <div class="suscribe__number">
+        <h2>
+            10%
+        </h2>
+        <img src="img/icon-sided.png" alt="">
+    </div>
+    <div class="suscribe__info">
+        <svg width="10" height="90%" xmlns="http://www.w3.org/2000/svg">
+            <line x1="5" y1="0" x2="5" y2="100%" stroke="#e6e8da" stroke-width="2" stroke-dasharray="11" />
+        </svg>
+        <h3>
+            Suscríbete, entérate y obten un descuento en tu compra!
+        </h3>
+        <form (submit)="onSubmit($event)" id="form-suscription">
+            <input [(ngModel)]="name" name="name" type="name" required placeholder="Ingresa tu nombre">
+            <input [(ngModel)]="email" name="email" type="email" required placeholder="Ingresa tu email">
+            <button type="submit" value="send"><i class="fa-solid fa-angle-right"></i></button>
+        </form>
+        <p>
+            Al dar click en suscribir estas aceptando nuestras nuestras <a href="">políticas</a> y <a href="">Términos y condiciones.</a>
+        </p>
+        <span>
+            Todos los derechos reservados. &#64;2024, Pixel-pink.
+        </span>
+    </div>
+</section>

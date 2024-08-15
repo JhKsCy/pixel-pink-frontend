@@ -1,0 +1,74 @@
+.cards__title {
+    margin-top: 60px;
+    padding-left: 40px;
+    text-transform: uppercase;
+    line-height: 0;
+}
+.cards__title h2 {
+    font-family: "Anton", sans-serif;
+    font-size: 48px;
+    color: #e6e8da;
+}
+.cards__subtitle{
+    color: #e6e8da;
+}
+.cards__subtitle a {
+    color: #e6e8da;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all .5s;
+}
+.cards__subtitle a:hover {
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+.card {
+    width: 15rem;
+    margin-top: 60px;
+    padding: 20px 10px 10px;
+    border-radius: 0;
+    background: #e6e8da;
+    border: 1px solid #ff4372;
+    border-radius: 5px;
+    transition: all .3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card img {
+    padding: 10px;
+    transition: opacity 1s;
+}
+.card-body {
+    display: grid;
+    grid-template-columns: 2.5fr .5fr;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ff4372;
+}
+.card-body a {
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.card-body a:hover {
+    color: #ff4372;
+}
+.card-body button {
+    height: 35px;
+    width: 35px;
+    padding: 9px;
+    border: none;
+    border-radius: 100px;
+    color: #e6e8da;
+    background: #8b95c9;
+}
+.card-body button:hover {
+    background: #ff4372;
+}
+.card-body__tag {
+    align-self: center;
+}

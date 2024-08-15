@@ -1,0 +1,93 @@
+.suscribe {
+    margin: 70px 0;
+    height: 280px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    justify-items: center;
+    color: #e6e8da;
+}
+.suscribe__number {
+    background: #ff4372;
+    height: 90%;
+    width: 86%;
+    align-content: center;
+    text-align: center;
+    justify-self: self-end;
+    border-radius: 0 20px 20px 0;
+}
+.suscribe__number h2 {
+    font-size: 80px;
+    font-weight: bold;
+    font-family: "Anton", sans-serif;
+    padding-left: 70px;
+    position: relative;
+    top: 81px;
+}
+.suscribe__number img {
+    height: 165px;
+    position: relative;
+    top: -55px;
+    right: 46%;
+}
+.suscribe__info {
+    background: #ff4372;
+    height: 90%;
+    width: 96%;
+    align-content: center;
+    text-align: center;
+    justify-self: self-start;
+    border-radius: 20px 0 0 20px;
+}
+.suscribe__info svg {
+    position: relative;
+    right: 50%;
+    top: 5%;
+}
+.suscribe__info h3 {
+    font-family: "Anton", sans-serif;
+    position: relative;
+    top: -71%;
+    font-size: xx-large;
+}
+.suscribe__info form {
+    position: relative;
+    top: -60%;
+}
+.suscribe__info input {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    height: 35px;
+    width: 30%;
+    padding: 10px;
+    background: #e6e8da;
+    border: 1px solid black;
+    margin-right: 10px;
+}
+.suscribe__info button {
+    border: none;
+    background: transparent;
+    color: #e6e8da;
+    font-size: 30px;
+    position: absolute;
+    top: -4px;
+    right: 15%;
+    transition: all .1s;
+}
+.suscribe__info button:hover {
+    color: black;
+}
+.suscribe__info p {
+    position: relative;
+    top: -49%;
+    font-size: smaller;
+}
+.suscribe__info a {
+    color: #e6e8da;
+}
+.suscribe__info span {
+    position: relative;
+    top: -57%;
+    font-size: smaller;
+    font-weight: bold;
+}
