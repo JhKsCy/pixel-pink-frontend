@@ -30,11 +30,12 @@
     border-radius: 0;
     background: #e6e8da;
     border: 1px solid #ff4372;
-    border-radius: 5px;
+    border-radius: 12px;
     transition: all .3s;
 }
 .card:hover {
     transform: scale(1.05);
+    transition: all .5s;
 }
 .card img {
     padding: 10px;
@@ -48,6 +49,7 @@
     font-size: 12px;
     text-transform: uppercase;
     color: #ff4372;
+    padding: 0 10px;
 }
 .card-body a {
     color: black;
@@ -58,17 +60,68 @@
     color: #ff4372;
 }
 .card-body button {
-    height: 35px;
-    width: 35px;
-    padding: 9px;
+    height: 25px;
+    width: 30px;
+    padding: 2px;
     border: none;
     border-radius: 100px;
     color: #e6e8da;
-    background: #8b95c9;
-}
-.card-body button:hover {
     background: #ff4372;
+    position: absolute;
+    top: 310px;
+}
+.card-body p {
+    margin-bottom: 8px;
 }
 .card-body__tag {
     align-self: center;
+}
+
+
+.card-body-hover {
+    display: grid;
+    grid-template-columns: 2.5fr .1fr;
+    padding: 0;
+    margin-top: 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ff4372;
+    padding: 0 10px;
+}
+.card-body__info-hover {
+    text-align: center;
+}
+.card-body__info-hover a {
+    margin: 5%;
+    color: #ff4372;
+    text-decoration: none;
+    font-weight: bolder;
+    cursor: pointer 
+}
+.btn-view-hover {
+    height: 25px;
+    width: 80%;
+    padding: 2px;
+    border: none;
+    border-radius: 100px;
+    color: #e6e8da;
+    background: #ff4372;
+    position: absolute;
+    top: 310px;
+    left: 10%;
+}
+.btn-view-hover a {
+    position:absolute;
+    top: 5px;
+    left: 10px;
+    margin: 0%;
+    color: #e6e8da;
+    text-decoration: none;
+    font-weight: bolder;
+    text-align: left;
+}
+.btn-view-hover i {
+    position: absolute;
+    top: 7px;
+    right: 8px;
 }
