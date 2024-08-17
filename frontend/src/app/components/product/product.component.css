@@ -1,0 +1,150 @@
+.clothe-card {
+    background: #e6e8da;
+    margin: 85px 10%;
+    border: 1px solid #ff4372;
+    border-radius: 10px;
+    height: 620px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+.clothe-card__slide {
+    align-content: center;
+    justify-self: center;
+    text-align: -webkit-center;
+}
+.clothe-card__slide img {
+    height: 500px;
+}
+.clothe-card__slide i {
+    color: #ff4372;
+    font-size: xx-large;
+}
+.clothe-card__slide p {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    background: #ff4372;
+    color: #e6e8da;
+}
+.clothe-card__info {
+    padding-right: 8%;
+    margin-left: 3%;
+    display: grid;
+    grid-template-rows: .5fr 1.2fr .5fr .6fr .3fr 2fr;
+}
+.clothe-card__info-title {
+    align-content: center;
+}
+.clothe-card__info-title h2 {
+    font-family: "Anton", sans-serif;
+    font-size: 45px;
+    margin: 0;
+    text-transform: uppercase;
+}
+.clothe-card__info-title p {
+    font-weight: 600;
+    color: #ff4372;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.clothe-card__info-buttons {
+    align-self: self-end;
+    padding-bottom: 9px;
+}
+.clothe-card__info-buttons button{
+    border: none;
+    background: #8b95c9;
+    padding: 4px 23px;
+    font-weight: 500;
+    color: #e6e8da;
+    font-size: 15px;
+}
+.clothe-card__info-sizes {
+    display: flex;
+    gap: 10px;
+}
+.size-button {
+    background-color: #e6e8da;
+    color: #ff4372;
+    border: none;
+    height: 65px;
+    width: 65px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #ff4372;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+.size-button:hover {
+    background-color: #ff4372;
+    color: #e6e8da;
+}
+.size-button.selected {
+    background-color: #ff4372;
+    color: #e6e8da;
+    transform: translateY(2px);
+}
+.clothe-card__info-cart {
+    display: flex;
+    gap: 10px;
+}
+.clothe-card__info-cart span {
+    font-size: small;
+}
+.clothe-card__info-cart button {
+    margin-top: 5px;
+    background-color: #e6e8da;
+    color: #ff4372;
+    border: none;
+    height: 35px;
+    width: 65px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #ff4372;
+    cursor: pointer;
+}
+.clothe-card__cart-button {
+    width: 215px !important;
+}
+.clothe-card__info-cart button:hover {
+    background-color: #ff4372;
+    color: #e6e8da;
+}
+.clothe-card__info-description {
+    text-align: justify;
+    margin-top: 30px;
+}
+.clothe-card__info-description h4 {
+    font-size: 18px;
+}
+.clothe-card__info-description p {
+    padding-top: 10px;
+
+}
+.clothe-card__info-description li {
+    font-size: 15px;
+}
+.half-carousel {
+    width: 400px;
+}
+.carousel-inner {
+    width: 80%;
+}
+
+.clothe-card__info-map {
+    font-size: 12px;
+    align-self: flex-end;
+
+}
+.clothe-card__info-map a {
+    text-decoration: none;
+    color: #939393;
+}
