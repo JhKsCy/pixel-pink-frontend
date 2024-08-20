@@ -1,5 +1,5 @@
 .header {
-    height: 540px;
+    height: 515px;
     margin-top: 55px;
 }
 .header__info {
@@ -29,6 +29,7 @@
 }
 .header__carrousel button {
     width: 10%;
+    z-index: 0;
 }
 .carousel {
     height: 100%;

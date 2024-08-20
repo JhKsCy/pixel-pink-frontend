@@ -39,3 +39,5 @@ body {
     font-family: 'Hipnouma';
     src: url('/assets/fonts/Hipnouma.ttf') format('truetype');
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

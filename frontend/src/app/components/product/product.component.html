@@ -1,0 +1,114 @@
+<section class="clothe-card" *ngIf="product">
+    <div class="clothe-card__slide">
+        <div class="half-carousel">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner" id="clothe__images">
+                    <div class="carousel-item active">
+                        <img src="{{product.imgA}}" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{product.imgB}}" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{product.imgC}}" alt="">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <p>
+            Envío gratis por compras superiores a 150.000
+        </p>
+    </div>
+    <div class="clothe-card__info">
+        <div class="clothe-card__info-map">
+            <a href="">
+                Inicio
+            </a>
+            <a href="">
+                > Categorías
+            </a>
+            <a href="">
+                > {{ product.clotheCollection }}
+            </a>
+            <a href="">
+                > {{ product.name }}
+            </a>
+        </div>
+        
+        <div class="clothe-card__info-title" id="clothe__title">
+            <h2>
+                {{ product.name }}
+            </h2>
+            <p>
+                $ {{ product.price }}
+            </p>
+        </div>
+
+        <div class="clothe-card__info-buttons">
+            <button>
+                Guía de tallas
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="clothe-card__info-sizes">
+        <button
+            [ngClass]="buttonXS"
+            (click)="changeColor(1)">
+            XS
+        </button>
+        <button
+            [ngClass]="buttonS"
+            (click)="changeColor(2)">
+            S
+        </button>
+        <button
+            [ngClass]="buttonM"
+            (click)="changeColor(3)">
+            M
+        </button>
+        <button
+            [ngClass]="buttonL"
+            (click)="changeColor(4)">
+            L
+        </button>
+        <button
+            [ngClass]="buttonXL"
+            (click)="changeColor(5)">
+            XL
+        </button>
+        </div>
+        
+        <div class="clothe-card__info-cart">
+            <button class="button" (click)="subsQuantity()">
+                -
+            </button>
+            <button class="clothe-card__cart-button">
+                <span>
+                    {{ cartQuantity }}
+                </span>
+                <i class="fa-solid fa-basket-shopping"></i>
+            </button>
+            <button class="button" (click)="sumQuantity()">
+                +
+            </button>
+        </div>
+
+        <div class="clothe-card__info-description">
+            <h4>
+                Descripción
+            </h4>
+            <p>
+                {{ product.description }}
+            </p>
+        </div>
+    </div>
+</section>

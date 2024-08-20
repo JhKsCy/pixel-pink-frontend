@@ -8,6 +8,8 @@ import { PurchaseEmailComponent } from './components/purchase-email/purchase-ema
 import { PersonalDataComponent } from './components/personal-data/personal-data.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { ProductComponent } from './components/product/product.component';
+
 
 
 export const routes: Routes = [
@@ -18,5 +20,6 @@ export const routes: Routes = [
     { path: 'purchase', title: `Purchase`, component: PurchaseEmailComponent},
     {path: 'personalData', title: `PeronalData`, component: PersonalDataComponent},
     { path: 'payment', title: `Payment`, component: PaymentComponent},
-    { path: 'shoppingCart', title: `ShoppingCart`, component: ShoppingCartComponent}
+    { path: 'shoppingCart', title: `ShoppingCart`, component: ShoppingCartComponent},
+    { path: 'product/:id', title: `Product`, component: ProductComponent}
 ];
