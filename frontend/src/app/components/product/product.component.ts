@@ -15,8 +15,6 @@ export class ProductComponent {
   product: any
   cartQuantity: number = 0
 
-  selected: boolean = false
-
   constructor(private cardService: CardsService, private activeRoute: ActivatedRoute, private renderer: Renderer2) {}
 
   ngOnInit(): void{
@@ -33,14 +31,6 @@ export class ProductComponent {
     }
   }
 
-  sizes = [
-    {size: 'XS', active: false},
-    {size: 'S', active: false},
-    {size: 'M', active: false},
-    {size: 'L', active: false},
-    {size: 'XL', active: false},
-  ]
-
   sumQuantity(): void {
     this.cartQuantity = this.cartQuantity + 1
   }
@@ -51,11 +41,28 @@ export class ProductComponent {
     }
   }
 
-  changeColor(index: number) {
-    for (let item of this.sizes) {
-      if(index) {
-        item.active = !item.active
-      }
-    }
+
+  buttonXS = 'size-button';
+  buttonS = 'size-button';
+  buttonM = 'size-button';
+  buttonL = 'size-button';
+  buttonXL = 'size-button';
+
+  changeColor(clickedButton: number) {
+    this.resetColors();
+    if (clickedButton === 1) {this.buttonXS = 'accent'};
+    if (clickedButton === 2) {this.buttonS = 'accent'};
+    if (clickedButton === 3) {this.buttonM = 'accent'};
+    if (clickedButton === 4) {this.buttonL = 'accent'};
+    if (clickedButton === 5) {this.buttonXL = 'accent'};
   }
+
+  private resetColors() {
+    this.buttonXS = 'size-button';
+    this.buttonS = 'size-button';
+    this.buttonM = 'size-button';
+    this.buttonL = 'size-button';
+    this.buttonXL = 'size-button';
+  }
+  
 }

@@ -42,6 +42,7 @@
                 > {{ product.name }}
             </a>
         </div>
+        
         <div class="clothe-card__info-title" id="clothe__title">
             <h2>
                 {{ product.name }}
@@ -50,18 +51,42 @@
                 $ {{ product.price }}
             </p>
         </div>
+
         <div class="clothe-card__info-buttons">
             <button>
                 Guía de tallas
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
         </div>
+
         <div class="clothe-card__info-sizes">
-            @for(size of sizes; track $index) {
-                <button class="size-button" [ngClass]="{'selected': size.active }" (click)="changeColor($index)">{{size.size}}</button>
-            }
-            <p id="selected-size"></p>
+        <button
+            [ngClass]="buttonXS"
+            (click)="changeColor(1)">
+            XS
+        </button>
+        <button
+            [ngClass]="buttonS"
+            (click)="changeColor(2)">
+            S
+        </button>
+        <button
+            [ngClass]="buttonM"
+            (click)="changeColor(3)">
+            M
+        </button>
+        <button
+            [ngClass]="buttonL"
+            (click)="changeColor(4)">
+            L
+        </button>
+        <button
+            [ngClass]="buttonXL"
+            (click)="changeColor(5)">
+            XL
+        </button>
         </div>
+        
         <div class="clothe-card__info-cart">
             <button class="button" (click)="subsQuantity()">
                 -
@@ -76,6 +101,7 @@
                 +
             </button>
         </div>
+
         <div class="clothe-card__info-description">
             <h4>
                 Descripción

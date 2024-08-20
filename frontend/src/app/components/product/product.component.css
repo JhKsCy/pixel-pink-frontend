@@ -84,10 +84,20 @@
     background-color: #ff4372;
     color: #e6e8da;
 }
-.size-button.selected {
+.accent {
     background-color: #ff4372;
     color: #e6e8da;
     transform: translateY(2px);
+    border: none;
+    height: 65px;
+    width: 65px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #ff4372;
+    cursor: pointer;
 }
 .clothe-card__info-cart {
     display: flex;
@@ -148,3 +158,4 @@
     text-decoration: none;
     color: #939393;
 }
+

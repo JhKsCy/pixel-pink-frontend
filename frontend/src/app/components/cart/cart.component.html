@@ -1,0 +1,90 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over" class="custom-sidenav" position="end" [opened]="false">
+        <div class="cart__title">
+            <div class="cart__title-info">
+                <p>
+                    Mi carrito
+                </p>
+                <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+            <button (click)="sidenav.toggle()" class="cart__title-button">X</button>
+        </div>
+        
+        <div class="cart__products">
+            <div>
+                <div class="cart__img">
+                    <img src="/img/cards/pink-goth-collection/dress-squares-pink/sdp-1.png">
+                </div>
+                <span>
+                    1
+                </span>
+            </div>
+            <div class="cart__products-info">
+                <a href="">
+                    Vestido pink goth
+                </a>
+                <p>
+                    M
+                </p>
+                <div class="cart__products-buttons">
+                    <div>
+                        <button>
+                            -
+                        </button>
+                        <button>
+                            1
+                        </button>
+                        <button>
+                            +
+                        </button>
+                    </div>
+                    <i class="fa-regular fa-trash-can"></i>
+                </div>
+            </div>
+            <div class="cart__products-price">
+                <p>
+                    $ 115.000
+                </p>
+            </div>
+        </div>
+
+        <div class="cart__math">
+            <div class="horizontal-bar"></div>
+            <div class="cart__math-div">
+                <h5>
+                    Subtotal
+                </h5>
+                <p>
+                    $ 115.000
+                </p>
+            </div>
+            <div class="cart__math-div">
+                <h5>
+                    Envío
+                </h5>
+                <p>
+                    Por definir
+                </p>
+            </div>
+            <div class="horizontal-bar"></div>
+            <div class="cart__math-div">
+                <h5>
+                    Total
+                </h5>
+                <p>
+                    $ 115.000
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <button class="buy-button">
+                Comprar
+            </button>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <button (click)="sidenav.toggle()">Toggle Sidenav</button>
+    </mat-sidenav-content>
+</mat-sidenav-container>
