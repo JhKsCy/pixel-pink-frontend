@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.step-circles {
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+    margin-bottom: 51px;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #E6E8DA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #E6E8DA;
+    margin: 0 50px;
+}
+
+.step-circle.active {
+    background-color: #f5f5dc; /* Color crema */
+    color: #000;
+}
+
+.container {
+    background-color: #E6E8DA;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 91%;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.input-container-Data {
+    margin-bottom: 30px;
+    margin: 20px 58px 80px
+}
+
+.input-container-Data h2 {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #333;
+    
+}
+
+.form-row {
+    display: flex;
+    align-items: flex-start; /* Alinea las columnas desde el inicio */
+    gap: 20px; /* Añade espacio entre columnas */
+}
+
+.form-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-column:nth-child(2) {
+    margin-top: 145px; /* Ajusta este valor según el desplazamiento deseado */
+}
+
+.input-container {
+    margin: 30px 92px 9px 52px;
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #FF4372;
+    background-color: #E6E8DA;
+    outline: none;
+}
+
+.continue-button {
+    background-color: #FF4372;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 75%;
+    margin: 45px 0px 30px 0px;
+    margin-left: -94%;
+    transition: background-color 0.3s;
+}
+.continue-button:hover {
+    background-color: #e91e84;
+}
+
+

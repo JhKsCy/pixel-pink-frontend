@@ -5,11 +5,10 @@
     display: grid;
     grid-template-columns: .5fr 1fr .5fr;
     align-items: center;
-    padding: 0 10%;
     z-index: 1;
     position: fixed;
     background-color: transparent;
-    transition: background-color 0.3s;
+    transition: background-color 0.6s;
     width: 100%;
 }
 .navbar.scrolled {
@@ -33,6 +32,7 @@
 .navbar a {
     text-decoration: none;
     color: #ff4372;
+    font-weight: bolder;
     margin: 0 15px;
     transition: color 0.3s, background-color 0.3s, padding 0.3s, border-radius 0.3s;
 }
@@ -44,8 +44,8 @@
 
 }
 .icon {
-    font-weight: bolder; /* Peso del texto */
-    color: #ff4372; /* Color del texto */
+    font-weight: bolder; 
+    color: #ff4372;
 }
 .navbar_icon {
     display: flex;
@@ -54,9 +54,9 @@
     padding: 0px 75px 0px 0px;
 }
 .navbar_icon img {
-    height: 50px; /* Ajusta la altura según sea necesario */
-    width: auto; /* Mantiene la proporción de la imagen */
-    margin-right: 8px; /* Espacio entre la imagen y el texto */
+    height: 50px; 
+    width: auto; 
+    margin-right: 8px; 
 }
 .navbar__menu {
     justify-self: center;
@@ -64,8 +64,11 @@
     font-weight: 600;
     margin-left: 34px;
 }
-.navbar__buttons {
-    justify-self: end;   
+#menu {
+    margin-left: 15%;
+}
+.buttons {
+    margin-left: 20%;
 }
 
 .hidden {
