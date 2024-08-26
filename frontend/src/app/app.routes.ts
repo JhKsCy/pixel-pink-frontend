@@ -10,6 +10,9 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ProductComponent } from './components/product/product.component';
 import { CollectionComponent } from './components/collection/collection.component';
+import { NewDirectionComponent } from './components/new-direction/new-direction.component';
+import { DefaultDataComponent } from './components/default-data/default-data.component';
+
 
 
 
@@ -23,5 +26,8 @@ export const routes: Routes = [
     { path: 'payment', title: `Payment`, component: PaymentComponent},
     { path: 'shoppingCart', title: `ShoppingCart`, component: ShoppingCartComponent},
     { path: 'product/:id', title: `Product`, component: ProductComponent },
-    { path: 'collection/:clotheCollection', title: `Collection`, component: CollectionComponent }
+    { path: 'collection/:clotheCollection', title: `Collection`, component: CollectionComponent },
+    { path: 'product/:id', title: `Product`, component: ProductComponent},
+    { path: 'newDirection', title: `NewDirection`, component: NewDirectionComponent},
+    { path: 'default', title: `Default`, component: DefaultDataComponent}
 ];
