@@ -1,27 +1,3 @@
-.cards__title {
-    margin-top: 60px;
-    padding-left: 40px;
-    text-transform: uppercase;
-    line-height: 0;
-}
-.cards__title h2 {
-    font-family: "Anton", sans-serif;
-    font-size: 48px;
-    color: #e6e8da;
-}
-.cards__subtitle{
-    color: #e6e8da;
-}
-.cards__subtitle a {
-    color: #e6e8da;
-    text-decoration: none;
-    font-size: 12px;
-    transition: all .5s;
-}
-.cards__subtitle a:hover {
-    text-decoration: underline;
-    margin-right: 10px;
-}
 
 .card {
     width: 15rem;
@@ -78,6 +54,13 @@
     align-self: center;
 }
 
+
+.cards__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    margin: 0 10%;
+}
 
 .card-body-hover {
     display: grid;

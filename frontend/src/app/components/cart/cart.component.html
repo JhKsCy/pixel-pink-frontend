@@ -10,13 +10,13 @@
             <button (click)="sidenav.toggle()" class="cart__title-button">X</button>
         </div>
         
-        <div class="cart__products">
+        <!-- <div class="cart__products">
             <div>
                 <div class="cart__img">
                     <img src="/img/cards/pink-goth-collection/dress-squares-pink/sdp-1.png">
                 </div>
                 <span>
-                    1
+                    {{ cartQuantity }}
                 </span>
             </div>
             <div class="cart__products-info">
@@ -28,13 +28,13 @@
                 </p>
                 <div class="cart__products-buttons">
                     <div>
-                        <button>
+                        <button (click)="subsQuantity()">
                             -
                         </button>
                         <button>
-                            1
+                            {{ cartQuantity }}
                         </button>
-                        <button>
+                        <button (click)="sumQuantity()">
                             +
                         </button>
                     </div>
@@ -75,6 +75,61 @@
                     $ 115.000
                 </p>
             </div>
+        </div> -->
+
+        <div class="cart__products" *ngFor="let product of cartProducts">
+            <div>
+                <div class="cart__img">
+                    <img [src]="product.imgA">
+                </div>
+                <span>
+                    {{ product.quantity }}
+                </span>
+            </div>
+            <div class="cart__products-info">
+                <a href="">{{ product.name }}</a>
+                <p>{{ product.size }}</p>
+                <div class="cart__products-buttons">
+                    <div>
+                        <button (click)="subsQuantity(product)">
+                            -
+                        </button>
+                        <button>
+                            {{ product.quantity }}
+                        </button>
+                        <button (click)="sumQuantity(product)">
+                            +
+                        </button>
+                    </div>
+                    <i class="fa-regular fa-trash-can" (click)="removeFromCart(product._id)"></i>
+                </div>
+            </div>
+            <div class="cart__products-price">
+                <p>
+                    $ {{ product.price * product.quantity }}
+                </p>
+            </div>
+        </div>
+        
+        <div class="cart__math">
+            <div class="horizontal-bar"></div>
+            <div class="cart__math-div">
+                <h5>Subtotal</h5>
+                <p>
+                    $ {{ getSubtotal() }}
+                </p>
+            </div>
+            <div class="cart__math-div">
+                <h5>Envío</h5>
+                <p>Por definir</p>
+            </div>
+            <div class="horizontal-bar"></div>
+            <div class="cart__math-div">
+                <h5>Total</h5>
+                <p>
+                    $ {{ getTotal() }}
+                </p>
+            </div>
         </div>
 
         <div>
@@ -83,8 +138,4 @@
             </button>
         </div>
     </mat-sidenav>
-
-    <mat-sidenav-content>
-        <button (click)="sidenav.toggle()">Toggle Sidenav</button>
-    </mat-sidenav-content>
 </mat-sidenav-container>

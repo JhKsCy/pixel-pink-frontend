@@ -35,6 +35,7 @@
     font-weight: bolder;
     margin: 0 15px;
     transition: color 0.3s, background-color 0.3s, padding 0.3s, border-radius 0.3s;
+    cursor: pointer;
 }
 .navbar a:hover {
     color: #fffefe;

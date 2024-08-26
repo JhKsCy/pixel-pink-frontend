@@ -29,17 +29,14 @@
     </div>
     <div class="clothe-card__info">
         <div class="clothe-card__info-map">
-            <a href="">
+            <a routerLink="/">
                 Inicio
             </a>
-            <a href="">
+            <a routerLink="/categorias">
                 > Categorías
             </a>
-            <a href="">
-                > {{ product.clotheCollection }}
-            </a>
-            <a href="">
-                > {{ product.name }}
+            <a routerLink="/collection">
+                > {{ product.clotheCollection }} Collection
             </a>
         </div>
         
@@ -53,7 +50,7 @@
         </div>
 
         <div class="clothe-card__info-buttons">
-            <button>
+            <button (click)="showTableSizes()">
                 Guía de tallas
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
@@ -91,7 +88,7 @@
             <button class="button" (click)="subsQuantity()">
                 -
             </button>
-            <button class="clothe-card__cart-button">
+            <button class="clothe-card__cart-button" (click)="addToCart()">
                 <span>
                     {{ cartQuantity }}
                 </span>
@@ -112,3 +109,6 @@
         </div>
     </div>
 </section>
+
+<app-recomendations></app-recomendations>
+<app-footer></app-footer>

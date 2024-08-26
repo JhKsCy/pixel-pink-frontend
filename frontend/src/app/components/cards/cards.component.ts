@@ -2,20 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { CardsService } from '../../services/cards.service';
-import { CarouselModule } from 'primeng/carousel';
-import { ButtonModule } from 'primeng/button';
-import { TagModule } from 'primeng/tag';
-import { CardsComponent } from '../cards/cards.component';
-
 
 @Component({
-  selector: 'app-recomendations',
+  selector: 'app-cards',
   standalone: true,
-  imports: [ CommonModule, CarouselModule, ButtonModule, TagModule, CardsComponent ],
-  templateUrl: './recomendations.component.html',
-  styleUrl: './recomendations.component.css'
+  imports: [ CommonModule ],
+  templateUrl: './cards.component.html',
+  styleUrl: './cards.component.css'
 })
-export class RecomendationsComponent {
+export class CardsComponent {
+
   product: any
   products: any [] = []
   cartTextHidden: boolean = true
@@ -61,21 +57,6 @@ export class RecomendationsComponent {
     };
   }
 
-  // allProducts(): void{
-  //   const productId: string | null = this.activeRoute.snapshot.paramMap.get('id')
-  //   this.cardsService.getAllProducts().subscribe(
-  //     response => {
-  //       const allProducts: any[] = response.products
-  //       const filteredProducts = allProducts.filter(x => x._id !== productId )
-  //       console.log(filteredProducts)
-  //       this.products = filteredProducts
-  //     },
-  //     error => {
-  //       console.log("error", error)
-  //     }
-  //   )
-  // }
-
   allProducts(): void {
     const productId: string | null = this.activeRoute.snapshot.paramMap.get('id');
     const productCollection: string | null = this.activeRoute.snapshot.paramMap.get('clotheCollection');
@@ -114,7 +95,5 @@ export class RecomendationsComponent {
     this.router.navigate(['/collection', clotheCollection])
   }
 
+
 }
-
-
-

@@ -1,0 +1,38 @@
+.header__collection a {
+    font-family: "Anton", sans-serif;
+    color: #e6e8da;
+    text-decoration: underline;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    font-size: 110px;
+    text-shadow: #ff4372 -4px 3px;
+    line-height: 135px;
+    text-transform: uppercase;
+}
+
+.cards__title {
+    margin-top: 60px;
+    padding-left: 40px;
+    text-transform: uppercase;
+    line-height: 0;
+}
+.cards__title h2 {
+    font-family: "Anton", sans-serif;
+    font-size: 48px;
+    color: #e6e8da;
+}
+.cards__subtitle{
+    color: #e6e8da;
+}
+.cards__subtitle a {
+    color: #e6e8da;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all .5s;
+}
+.cards__subtitle a:hover {
+    text-decoration: underline;
+    margin-right: 10px;
+}
+

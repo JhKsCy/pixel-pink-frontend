@@ -1,3 +1,7 @@
+@import "primeflex/primeflex.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -41,3 +45,14 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+.p-carousel-container {
+    margin: 0 1.8%;
+}
+button.p-link {
+    background-color: transparent;
+    color: #e6e8da;
+}

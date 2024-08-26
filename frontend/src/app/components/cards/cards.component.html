@@ -1,0 +1,54 @@
+<div class="cards__container">
+    <div *ngFor="let product of products" class="card" data-id="{{product.id}}"
+        (mouseenter)="product.isHovered = true" 
+        (mouseleave)="product.isHovered = false">
+        <img (click)="openProduct(product._id)" [src]="product.isHovered ? product.imgC : product.imgA" alt="...">
+        <div class="card-body" *ngIf="!product.isHovered">
+            <div class="card-body__info">
+                <a>
+                    {{ product.name }}
+                </a>
+                <p> 
+                    ${{ product.price }} 
+                </p>
+            </div>
+            <div class="card-body__tag">
+                <button data-id="{{product.id}}">
+                    <i class="fa-regular fa-star"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body-hover" *ngIf="product.isHovered" data-id="{{product.id}}">
+            <div class="card-body__info-hover">
+                <div>
+                    <a (mouseenter)="show()" (mouseleave)="show()">
+                        XS
+                    </a>
+                    <a (mouseenter)="show()" (mouseleave)="show()">
+                        S
+                    </a>
+                    <a (mouseenter)="show()" (mouseleave)="show()">
+                        M
+                    </a>
+                    <a (mouseenter)="show()" (mouseleave)="show()">
+                        L
+                    </a>
+                    <a (mouseenter)="show()" (mouseleave)="show()">
+                        XL
+                    </a>
+                </div>
+                <div>
+                    <span class="hover-text" [class.hidden]="cartTextHidden">
+                        Añade al carrito
+                    </span>
+                </div>
+            </div>
+            <div class="card-body__tag">
+                <button class="btn-view-hover" (click)="goToCollecion(product.clotheCollection)">
+                    <a> {{ product.clotheCollection }} Collection </a>
+                    <i class="fa-regular fa-star"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

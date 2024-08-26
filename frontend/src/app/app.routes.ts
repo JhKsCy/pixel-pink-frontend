@@ -9,6 +9,7 @@ import { PersonalDataComponent } from './components/personal-data/personal-data.
 import { PaymentComponent } from './components/payment/payment.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ProductComponent } from './components/product/product.component';
+import { CollectionComponent } from './components/collection/collection.component';
 
 
 
@@ -18,8 +19,9 @@ export const routes: Routes = [
     { path: 'login', title: `Login`, component: LoginComponent },
     { path: 'categorias', title: `Categorias`, component: CategoriasComponent},
     { path: 'purchase', title: `Purchase`, component: PurchaseEmailComponent},
-    {path: 'personalData', title: `PeronalData`, component: PersonalDataComponent},
+    { path: 'personalData', title: `PeronalData`, component: PersonalDataComponent},
     { path: 'payment', title: `Payment`, component: PaymentComponent},
     { path: 'shoppingCart', title: `ShoppingCart`, component: ShoppingCartComponent},
-    { path: 'product/:id', title: `Product`, component: ProductComponent}
+    { path: 'product/:id', title: `Product`, component: ProductComponent },
+    { path: 'collection/:clotheCollection', title: `Collection`, component: CollectionComponent }
 ];

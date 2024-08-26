@@ -34,6 +34,10 @@ export class CardsService {
   getAllProducts(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/get-all-products`)
   }
+
+  getCollection(clotheCollection: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/collection/${clotheCollection}`)
+  }
 }
 
 

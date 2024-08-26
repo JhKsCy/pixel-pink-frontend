@@ -57,6 +57,7 @@
 .cart__products-buttons i {
     color: #939393;
     margin-left: 10px;
+    cursor: pointer;
 }
 .cart__products-price {
     color: #939393;

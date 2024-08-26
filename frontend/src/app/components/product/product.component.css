@@ -53,13 +53,32 @@
     align-self: self-end;
     padding-bottom: 9px;
 }
-.clothe-card__info-buttons button{
+.clothe-card__info-buttons button {
     border: none;
     background: #8b95c9;
-    padding: 4px 23px;
-    font-weight: 500;
     color: #e6e8da;
     font-size: 15px;
+    border: none;
+    background: #8b95c9;
+    padding: 7px 19px;
+    font-weight: 500;
+    color: #e6e8da;
+    font-size: 14px;
+    border-radius: 0 50px 50px 0;
+    width: 150px;
+    text-align: start;
+    transition: all 0.5s
+}
+.clothe-card__info-buttons button > i {
+    margin-left: 5px;
+    transition: all 0.5s
+}
+.clothe-card__info-buttons button:hover {
+    width: 215px;
+}
+.clothe-card__info-buttons button:hover > i {
+    transform: rotate(180deg);
+    margin-left: 70px;
 }
 .clothe-card__info-sizes {
     display: flex;
@@ -137,6 +156,8 @@
 }
 .clothe-card__info-description p {
     padding-top: 10px;
+    font-size: 14px;
+    padding-right: 10%;
 
 }
 .clothe-card__info-description li {
