@@ -23,8 +23,8 @@ body {
     margin-bottom: 20px;
 }
 .step-circle {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     border: 2px solid #E6E8DA; 
     display: flex;
@@ -52,7 +52,7 @@ p {
 .input-container label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: #000000;
     font-size: 30px;
     font-weight: bolder;
     margin: 20px 101px 80px;
@@ -83,4 +83,7 @@ p {
 }
 .continue-button:hover {
     background-color: #e91e84;
+}
+.required-asterisk {
+    color: #e91e84;
 }

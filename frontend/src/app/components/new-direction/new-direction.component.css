@@ -7,30 +7,9 @@ body {
     margin: 0;
     background-color: #f0f0f0;
 }
+.required-asterisk {
+    color: #e91e84;
 
-.step-circles {
-    display: flex;
-    justify-content: center;
-    margin-top: 160px;
-    margin-bottom: 51px;
-}
-
-.step-circle {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid #E6E8DA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #E6E8DA;
-    margin: 0 50px;
-}
-
-.step-circle.active {
-    background-color: #f5f5dc; /* Color crema */
-    color: #000;
 }
 
 .container {
@@ -40,7 +19,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 91%;
     max-width: 90%;
-    margin: 0 auto;
+    margin: 15% auto;
 }
 
 .input-container-Data {
@@ -68,7 +47,7 @@ body {
 }
 
 .form-column:nth-child(2) {
-    margin-top: 145px; /* Ajusta este valor según el desplazamiento deseado */
+    margin-top: 145px; 
 }
 
 .input-container {
@@ -108,7 +87,5 @@ body {
 .continue-button:hover {
     background-color: #e91e84;
 }
-.required-asterisk {
-    color: #e91e84;
-}
+
 

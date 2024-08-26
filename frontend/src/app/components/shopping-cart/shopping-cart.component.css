@@ -7,12 +7,42 @@ body {
     margin: 0;
     background-color: #f0f0f0;
 }
+
+p {
+    color: #FF4372;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 10% 0% -10% 0%;
+}
+
+
 .container {
     background-color: #E6E8DA;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
+    max-width: 90%; 
     text-align: center;
-    margin-top: 41px;
+    position: relative;
+    margin: 15% 0 15% 5%;
+    height: 80%;
+}
+
+
+
+.pagar {
+    background-color: #FF4372;
+    color: #E6E8DA;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+}
+
+.pagar:hover {
+    background-color: #e91e84;
 }
