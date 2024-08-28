@@ -1,6 +1,7 @@
 .header {
     height: 515px;
     margin-top: 55px;
+    margin-bottom: -25px;
 }
 .header__info {
     position: relative;

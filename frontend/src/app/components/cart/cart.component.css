@@ -173,3 +173,21 @@ span {
     cursor: pointer;
     text-transform: uppercase;
 }
+
+.no-products {
+    text-align: center;
+    position: relative;
+    top: 24%;
+}
+.no-products img {
+    height: 100px;
+}
+.no-products h5 {
+    color: #ff4372;
+    font-weight: 700;
+    margin: 0;
+}
+.no-products p {
+    color: #939393;
+    font-size: 14px;
+}

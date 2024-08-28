@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { RecomendationsComponent } from '../recomendations/recomendations.component';
 import { FooterComponent } from '../footer/footer.component';
-import Swal from 'sweetalert2';
 import { CartService } from '../../services/cart.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product',
@@ -96,21 +96,24 @@ export class ProductComponent {
 
   addToCart() {
     if (!this.selectedSize) {
-        alert('Por favor, selecciona una talla antes de agregar al carrito.');
+        Swal.fire("Por favor, selecciona una talla antes de agregar al carrito.");
         return;
     }
 
     if (this.cartQuantity <= 0) {
-        alert('La cantidad debe ser mayor a 0.');
+        Swal.fire("La cantidad debe ser mayor a 0.");
         return;
     }
 
-    const productToAdd = { 
+    if (this.selectedSize && this.cartQuantity > 0) {
+      const productToAdd = { 
         ...this.product, 
-        quantity: this.cartQuantity,
-        size: this.selectedSize // Añade la talla seleccionada
-    };
-    this.cartService.addToCart(productToAdd);
+          quantity: this.cartQuantity,
+          size: this.selectedSize
+      };
+      this.cartService.addToCart(productToAdd);
+      Swal.fire("Producto añadido al carrito");
+    }
 }
 
 }

@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
   @ViewChild('sidenav') sidenav!: MatSidenav;
   cartProducts: any[] = [];
   cartQuantity: number = 1;
+  emptyCart : boolean = false;
   private cartSubscription: Subscription = new Subscription();
 
   constructor(private cartService: CartService) {}
@@ -23,7 +24,14 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartSubscription = this.cartService.cart$.subscribe(cart => {
       this.cartProducts = cart;
-    });
+      if(this.cartProducts.length == 0){
+        localStorage.clear()
+        this.emptyCart = true;
+      } else{
+        this.emptyCart = false;
+      }
+    } 
+  );
 
     this.cartService.cartToggle$.subscribe(() => {
       this.sidenav.toggle();
@@ -45,18 +53,17 @@ export class CartComponent implements OnInit {
       this.updateCart(product);
     }
   }
-
   
   updateCart(product: any): void {
     let cart = this.cartService.getCart();
-    cart = cart.map(x => x._id === product._id ? product : x);
+    cart = cart.map(x => x._id === product._id && x.size === product.size ? product : x);
     localStorage.setItem('shoppingCart', JSON.stringify(cart));
     this.cartService.cartSubject.next(cart);
   }
 
-  removeFromCart(productId: string): void {
+  removeFromCart(product: any): void {
     let cart = this.cartService.getCart();
-    cart = cart.filter(x => x._id !== productId);
+    cart = cart.filter(x => !( x._id == product._id && x.size == product.size ));
     localStorage.setItem('shoppingCart', JSON.stringify(cart));
     this.cartService.cartSubject.next(cart)
   }
@@ -68,5 +75,6 @@ export class CartComponent implements OnInit {
   getTotal(): number {
     return this.getSubtotal();
   }
+
 
 }

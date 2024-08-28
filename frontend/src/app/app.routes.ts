@@ -14,8 +14,6 @@ import { NewDirectionComponent } from './components/new-direction/new-direction.
 import { DefaultDataComponent } from './components/default-data/default-data.component';
 
 
-
-
 export const routes: Routes = [
     { path: '', title: `Home`, component: HomeComponent  },
     { path: 'register', title: `Register`, component: RegisterComponent  },

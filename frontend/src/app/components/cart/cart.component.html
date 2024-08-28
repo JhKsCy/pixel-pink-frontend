@@ -9,133 +9,80 @@
             </div>
             <button (click)="sidenav.toggle()" class="cart__title-button">X</button>
         </div>
-        
-        <!-- <div class="cart__products">
-            <div>
-                <div class="cart__img">
-                    <img src="/img/cards/pink-goth-collection/dress-squares-pink/sdp-1.png">
-                </div>
-                <span>
-                    {{ cartQuantity }}
-                </span>
-            </div>
-            <div class="cart__products-info">
-                <a href="">
-                    Vestido pink goth
-                </a>
-                <p>
-                    M
-                </p>
-                <div class="cart__products-buttons">
-                    <div>
-                        <button (click)="subsQuantity()">
-                            -
-                        </button>
-                        <button>
-                            {{ cartQuantity }}
-                        </button>
-                        <button (click)="sumQuantity()">
-                            +
-                        </button>
+
+        <div class="products-on-cart" *ngIf="!emptyCart">
+            <div class="cart__products" *ngFor="let product of cartProducts">
+                <div>
+                    <div class="cart__img">
+                        <img [src]="product.imgA">
                     </div>
-                    <i class="fa-regular fa-trash-can"></i>
+                    <span>
+                        {{ product.quantity }}
+                    </span>
                 </div>
-            </div>
-            <div class="cart__products-price">
-                <p>
-                    $ 115.000
-                </p>
-            </div>
-        </div>
-
-        <div class="cart__math">
-            <div class="horizontal-bar"></div>
-            <div class="cart__math-div">
-                <h5>
-                    Subtotal
-                </h5>
-                <p>
-                    $ 115.000
-                </p>
-            </div>
-            <div class="cart__math-div">
-                <h5>
-                    Envío
-                </h5>
-                <p>
-                    Por definir
-                </p>
-            </div>
-            <div class="horizontal-bar"></div>
-            <div class="cart__math-div">
-                <h5>
-                    Total
-                </h5>
-                <p>
-                    $ 115.000
-                </p>
-            </div>
-        </div> -->
-
-        <div class="cart__products" *ngFor="let product of cartProducts">
-            <div>
-                <div class="cart__img">
-                    <img [src]="product.imgA">
-                </div>
-                <span>
-                    {{ product.quantity }}
-                </span>
-            </div>
-            <div class="cart__products-info">
-                <a href="">{{ product.name }}</a>
-                <p>{{ product.size }}</p>
-                <div class="cart__products-buttons">
-                    <div>
-                        <button (click)="subsQuantity(product)">
-                            -
-                        </button>
-                        <button>
-                            {{ product.quantity }}
-                        </button>
-                        <button (click)="sumQuantity(product)">
-                            +
-                        </button>
+                <div class="cart__products-info">
+                    <a>{{ product.name }}</a>
+                    <p>{{ product.size }}</p>
+                    <div class="cart__products-buttons">
+                        <div>
+                            <button (click)="subsQuantity(product)">
+                                -
+                            </button>
+                            <button>
+                                {{ product.quantity }}
+                            </button>
+                            <button (click)="sumQuantity(product)">
+                                +
+                            </button>
+                        </div>
+                        <i class="fa-regular fa-trash-can" (click)="removeFromCart(product)"></i>
                     </div>
-                    <i class="fa-regular fa-trash-can" (click)="removeFromCart(product._id)"></i>
+                </div>
+                <div class="cart__products-price">
+                    <p>
+                        $ {{ product.price * product.quantity }}
+                    </p>
                 </div>
             </div>
-            <div class="cart__products-price">
-                <p>
-                    $ {{ product.price * product.quantity }}
-                </p>
+            
+            <div class="cart__math">
+                <div class="horizontal-bar"></div>
+                <div class="cart__math-div">
+                    <h5>Subtotal</h5>
+                    <p>
+                        $ {{ getSubtotal() }}
+                    </p>
+                </div>
+                <div class="cart__math-div">
+                    <h5>Envío</h5>
+                    <p>Por definir</p>
+                </div>
+                <div class="horizontal-bar"></div>
+                <div class="cart__math-div">
+                    <h5>Total</h5>
+                    <p>
+                        $ {{ getTotal() }}
+                    </p>
+                </div>
             </div>
-        </div>
-        
-        <div class="cart__math">
-            <div class="horizontal-bar"></div>
-            <div class="cart__math-div">
-                <h5>Subtotal</h5>
-                <p>
-                    $ {{ getSubtotal() }}
-                </p>
-            </div>
-            <div class="cart__math-div">
-                <h5>Envío</h5>
-                <p>Por definir</p>
-            </div>
-            <div class="horizontal-bar"></div>
-            <div class="cart__math-div">
-                <h5>Total</h5>
-                <p>
-                    $ {{ getTotal() }}
-                </p>
+    
+            <div>
+                <button class="buy-button">
+                    Comprar
+                </button>
             </div>
         </div>
 
-        <div>
-            <button class="buy-button">
-                Comprar
-            </button>
+        <div class="no-products" *ngIf="emptyCart">
+            <div>
+                <img src="/img/bunny-sorry.webp">
+                <h5>
+                    Lo sentimos!
+                </h5>
+                <p>
+                    Aún no hay nada en tu carrito
+                </p>
+            </div>
         </div>
     </mat-sidenav>
 </mat-sidenav-container>

@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { CardsService } from '../../services/cards.service';
+import { CartService } from '../../services/cart.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cards',
@@ -16,7 +18,7 @@ export class CardsComponent {
   products: any [] = []
   cartTextHidden: boolean = true
 
-  constructor(private cardsService: CardsService, private router: Router, private activeRoute: ActivatedRoute) {
+  constructor(private cardsService: CardsService, private router: Router, private activeRoute: ActivatedRoute, private cartService: CartService) {
 
     this.router.events.subscribe((evt) => {
       if (evt instanceof NavigationEnd) {
@@ -95,5 +97,18 @@ export class CardsComponent {
     this.router.navigate(['/collection', clotheCollection])
   }
 
+  addToCart(event: Event, size: string) {
+    const button = event.target as HTMLElement;
+    const productJson = button.getAttribute('data-product');
+    const product = productJson ? JSON.parse(productJson) : {};
+    
+    const productToAdd = {
+      ...product,
+      quantity: 1,
+      size: size
+    };
+    this.cartService.addToCart(productToAdd);
+    Swal.fire("Producto añadido al carrito");
+  }
 
 }
