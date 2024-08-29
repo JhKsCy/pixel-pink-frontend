@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
-import { MatSidenavModule, MatSidenav  } from '@angular/material/sidenav';
-import { CartService } from '../../services/cart.service';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit, ViewChild  } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatSidenavModule, MatSidenav  } from '@angular/material/sidenav';
 import { Subscription } from 'rxjs'
+import { AuthService } from '../../services/auth.service';
+import { CartService } from '../../services/cart.service';
 
 
 @Component({
@@ -16,14 +18,22 @@ export class CartComponent implements OnInit {
   @ViewChild('sidenav') sidenav!: MatSidenav;
   cartProducts: any[] = [];
   cartQuantity: number = 1;
+  emptyCart : boolean = false;
   private cartSubscription: Subscription = new Subscription();
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router: Router, private authsService: AuthService) {}
 
   ngOnInit(): void {
     this.cartSubscription = this.cartService.cart$.subscribe(cart => {
       this.cartProducts = cart;
-    });
+      if(this.cartProducts.length == 0){
+        localStorage.clear()
+        this.emptyCart = true;
+      } else{
+        this.emptyCart = false;
+      }
+    }
+  );
 
     this.cartService.cartToggle$.subscribe(() => {
       this.sidenav.toggle();
@@ -32,6 +42,10 @@ export class CartComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.cartSubscription.unsubscribe();
+  }
+
+  get isLoggedIn(): boolean {
+    return this.authsService.isLoggedIn()
   }
 
   sumQuantity(product: any): void {
@@ -45,18 +59,17 @@ export class CartComponent implements OnInit {
       this.updateCart(product);
     }
   }
-
   
   updateCart(product: any): void {
     let cart = this.cartService.getCart();
-    cart = cart.map(x => x._id === product._id ? product : x);
+    cart = cart.map(x => x._id === product._id && x.size === product.size ? product : x);
     localStorage.setItem('shoppingCart', JSON.stringify(cart));
     this.cartService.cartSubject.next(cart);
   }
 
-  removeFromCart(productId: string): void {
+  removeFromCart(product: any): void {
     let cart = this.cartService.getCart();
-    cart = cart.filter(x => x._id !== productId);
+    cart = cart.filter(x => !( x._id == product._id && x.size == product.size ));
     localStorage.setItem('shoppingCart', JSON.stringify(cart));
     this.cartService.cartSubject.next(cart)
   }
@@ -67,6 +80,16 @@ export class CartComponent implements OnInit {
 
   getTotal(): number {
     return this.getSubtotal();
+  }
+
+  toBuyNL() {
+    this.router.navigate(['/login'])
+    this.sidenav.toggle()
+  }
+
+  toBuy() {
+    this.router.navigate(['/'])
+    this.sidenav.toggle()
   }
 
 }

@@ -11,56 +11,6 @@
         </div>
     </div>
 
-    <!-- 
-
-    <div class="d-flex justify-content-evenly">
-        <div *ngFor="let product of products" class="card" data-id="{{product.id}}"
-            (mouseenter)="product.isHovered = true" 
-            (mouseleave)="product.isHovered = false">
-            <img [src]="product.isHovered ? product.imgC : product.imgA" alt="...">
-            <div class="card-body" *ngIf="!product.isHovered">
-                <div class="card-body__info">
-                    <a>
-                        {{ product.name }}
-                    </a>
-                    <p> 
-                        ${{ product.price }} 
-                    </p>
-                </div>
-                <div class="card-body__tag">
-                    <button data-id="{{product.id}}">
-                        <i class="fa-regular fa-star"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="card-body-hover" *ngIf="product.isHovered"  data-id="{{product.id}}">
-                <div class="card-body__info-hover">
-                    <a>
-                        XS
-                    </a>
-                    <a>
-                        S
-                    </a>
-                    <a>
-                        M
-                    </a>
-                    <a>
-                        L
-                    </a>
-                    <a>
-                        XL
-                    </a>
-                </div>
-                <div class="card-body__tag">
-                    <button class="btn-view-hover">
-                        <a routerLink="/"> {{ product.clotheCollection }} Collection </a>
-                        <i class="fa-regular fa-star"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <p-carousel 
     [value]="products" 
     [numVisible]="5" 
@@ -94,21 +44,26 @@
                             <div class="card-body-hover" *ngIf="product.isHovered" data-id="{{product.id}}">
                                 <div class="card-body__info-hover">
                                     <div>
-                                        <a (mouseenter)="show()" (mouseleave)="show()">
+                                        <button (mouseenter)="show()" (mouseleave)="show()" [attr.data-product]="product | json" 
+                                        (click)="addToCart($event, 'XS')">
                                             XS
-                                        </a>
-                                        <a (mouseenter)="show()" (mouseleave)="show()">
+                                        </button>
+                                        <button (mouseenter)="show()" (mouseleave)="show()" [attr.data-product]="product | json" 
+                                        (click)="addToCart($event, 'S')">
                                             S
-                                        </a>
-                                        <a (mouseenter)="show()" (mouseleave)="show()">
+                                        </button>
+                                        <button (mouseenter)="show()" (mouseleave)="show()" [attr.data-product]="product | json" 
+                                        (click)="addToCart($event, 'M')">
                                             M
-                                        </a>
-                                        <a (mouseenter)="show()" (mouseleave)="show()">
+                                        </button>
+                                        <button (mouseenter)="show()" (mouseleave)="show()" [attr.data-product]="product | json" 
+                                        (click)="addToCart($event, 'L')">
                                             L
-                                        </a>
-                                        <a (mouseenter)="show()" (mouseleave)="show()">
+                                        </button>
+                                        <button (mouseenter)="show()" (mouseleave)="show()" [attr.data-product]="product | json" 
+                                        (click)="addToCart($event, 'XL')">
                                             XL
-                                        </a>
+                                        </button>
                                     </div>
                                     <div>
                                         <span class="hover-text" [class.hidden]="cartTextHidden">

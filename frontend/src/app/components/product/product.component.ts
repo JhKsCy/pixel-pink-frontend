@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { RecomendationsComponent } from '../recomendations/recomendations.component';
 import { FooterComponent } from '../footer/footer.component';
-import Swal from 'sweetalert2';
 import { CartService } from '../../services/cart.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product',
@@ -96,21 +96,60 @@ export class ProductComponent {
 
   addToCart() {
     if (!this.selectedSize) {
-        alert('Por favor, selecciona una talla antes de agregar al carrito.');
+        Swal.fire({
+          showConfirmButton: false,
+          timer: 2100,
+          title: "<strong>Ups!<strong>",
+          html: `
+          <p style="color: #939393;"> Selecciona una talla antes de agregar al carrito </p>
+        `,
+          imageUrl: "/img/bunny-ups.gif",
+          imageHeight: 150,
+          color: "#ff4372",
+          background: "#e6e8da",
+          width: 500,
+        });
         return;
     }
 
     if (this.cartQuantity <= 0) {
-        alert('La cantidad debe ser mayor a 0.');
+      Swal.fire({
+        showConfirmButton: false,
+        timer: 2100,
+        title: "<strong>Ups!<strong>",
+        html: `
+        <p style="color: #939393;"> Debes agregar mínimo un articulo </p>
+      `,
+        imageUrl: "/img/bunny-ups.gif",
+        imageHeight: 150,
+        color: "#ff4372",
+        background: "#e6e8da",
+        width: 500,
+      });
         return;
     }
 
-    const productToAdd = { 
+    if (this.selectedSize && this.cartQuantity > 0) {
+      const productToAdd = { 
         ...this.product, 
-        quantity: this.cartQuantity,
-        size: this.selectedSize // Añade la talla seleccionada
-    };
-    this.cartService.addToCart(productToAdd);
+          quantity: this.cartQuantity,
+          size: this.selectedSize
+      };
+      this.cartService.addToCart(productToAdd);
+      Swal.fire({
+        showConfirmButton: false,
+        timer: 2000,
+        title: "<strong>Yay!<strong>",
+        html: `
+        <p style="color: #939393;"> Producto agregado al carrito </p>
+      `,
+        imageUrl: "/img/bunny-congrats.gif",
+        imageHeight: 150,
+        color: "#ff4372",
+        background: "#e6e8da",
+        width: 500
+      });
+    }
 }
 
 }

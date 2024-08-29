@@ -21,21 +21,26 @@
         <div class="card-body-hover" *ngIf="product.isHovered" data-id="{{product.id}}">
             <div class="card-body__info-hover">
                 <div>
-                    <a (mouseenter)="show()" (mouseleave)="show()">
+                    <button (mouseenter)="show()" (mouseleave)="show()" [attr.data-product]="product | json" 
+                    (click)="addToCart($event, 'XS')">
                         XS
-                    </a>
-                    <a (mouseenter)="show()" (mouseleave)="show()">
+                    </button>
+                    <button (mouseenter)="show()" (mouseleave)="show()" [attr.data-product]="product | json" 
+                    (click)="addToCart($event, 'S')">
                         S
-                    </a>
-                    <a (mouseenter)="show()" (mouseleave)="show()">
+                    </button>
+                    <button (mouseenter)="show()" (mouseleave)="show()" [attr.data-product]="product | json" 
+                    (click)="addToCart($event, 'M')">
                         M
-                    </a>
-                    <a (mouseenter)="show()" (mouseleave)="show()">
+                    </button>
+                    <button (mouseenter)="show()" (mouseleave)="show()" [attr.data-product]="product | json" 
+                    (click)="addToCart($event, 'L')">
                         L
-                    </a>
-                    <a (mouseenter)="show()" (mouseleave)="show()">
+                    </button>
+                    <button (mouseenter)="show()" (mouseleave)="show()" [attr.data-product]="product | json" 
+                    (click)="addToCart($event, 'XL')">
                         XL
-                    </a>
+                    </button>
                 </div>
                 <div>
                     <span class="hover-text" [class.hidden]="cartTextHidden">

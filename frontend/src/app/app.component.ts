@@ -10,7 +10,6 @@ import { ScrollTopComponent } from './components/scroll-top/scroll-top.component
 import { PurchaseEmailComponent } from './components/purchase-email/purchase-email.component';
 import { CartComponent } from './components/cart/cart.component';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,

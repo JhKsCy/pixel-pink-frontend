@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
+import { FooterComponent } from '../footer/footer.component';
 import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, FooterComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -23,18 +25,57 @@ export class LoginComponent {
       response => {
         sessionStorage.setItem('token', response.token)
         if(response.ok) {
-          Swal.fire('User logged', response.msg, 'success')
+          Swal.fire({
+            showConfirmButton: false,
+            timer: 2000,
+            title: "<strong>Bienvenido!</strong>",
+            imageUrl: "/img/bunny-congrats.gif",
+            imageHeight: 150,
+            color: "#ff4372",
+            background: "#e6e8da",
+            width: 500,
+          });
           this.router.navigate(['/'])
         } else {
-          Swal.fire('Error', response.error.msg, 'error')
+          Swal.fire({
+            showConfirmButton: false,
+            timer: 2000,
+            title: "<strong>Error!</strong>",
+            text: response.error.msg,
+            imageUrl: "/img/bunny-ups.gif",
+            imageHeight: 150,
+            color: "#939393",
+            background: "#e6e8da",
+            width: 500,
+          });
         }
       },
       error => {
         if(typeof error.error.msg != 'string'){
-          Swal.fire('Error', error.error.msg.password.msg, 'error')
+          Swal.fire({
+            showConfirmButton: false,
+            timer: 2000,
+            title: "<strong>Error!</strong>",
+            text: error.error.msg.password.msg,
+            imageUrl: "/img/bunny-ups.gif",
+            imageHeight: 150,
+            color: "#939393",
+            background: "#e6e8da",
+            width: 500,
+          });
         }
         else{
-          Swal.fire('Error', error.error.msg, 'error')
+          Swal.fire({
+            showConfirmButton: false,
+            timer: 2000,
+            title: "<strong>Error!</strong>",
+            text: error.error.msg,
+            imageUrl: "/img/bunny-ups.gif",
+            imageHeight: 150,
+            color: "#939393",
+            background: "#e6e8da",
+            width: 500,
+          });
         }
       }
       

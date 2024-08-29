@@ -1,9 +1,13 @@
+/* .header__collection {
+    height: 300px;
+} */
+
 .header__collection a {
     font-family: "Anton", sans-serif;
     color: #e6e8da;
     text-decoration: underline;
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 35%;
     font-size: 110px;
     text-shadow: #ff4372 -4px 3px;

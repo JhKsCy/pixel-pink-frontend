@@ -1,17 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd, RouterLink } from '@angular/router';
 import { CardsService } from '../../services/cards.service';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
-import { CardsComponent } from '../cards/cards.component';
+import { CartService } from '../../services/cart.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
   selector: 'app-recomendations',
   standalone: true,
-  imports: [ CommonModule, CarouselModule, ButtonModule, TagModule, CardsComponent ],
+  imports: [ CommonModule, CarouselModule, ButtonModule, TagModule, RouterLink ],
   templateUrl: './recomendations.component.html',
   styleUrl: './recomendations.component.css'
 })
@@ -20,7 +21,7 @@ export class RecomendationsComponent {
   products: any [] = []
   cartTextHidden: boolean = true
 
-  constructor(private cardsService: CardsService, private router: Router, private activeRoute: ActivatedRoute) {
+  constructor(private cardsService: CardsService, private router: Router, private activeRoute: ActivatedRoute, private cartService: CartService) {
 
     this.router.events.subscribe((evt) => {
       if (evt instanceof NavigationEnd) {
@@ -61,21 +62,6 @@ export class RecomendationsComponent {
     };
   }
 
-  // allProducts(): void{
-  //   const productId: string | null = this.activeRoute.snapshot.paramMap.get('id')
-  //   this.cardsService.getAllProducts().subscribe(
-  //     response => {
-  //       const allProducts: any[] = response.products
-  //       const filteredProducts = allProducts.filter(x => x._id !== productId )
-  //       console.log(filteredProducts)
-  //       this.products = filteredProducts
-  //     },
-  //     error => {
-  //       console.log("error", error)
-  //     }
-  //   )
-  // }
-
   allProducts(): void {
     const productId: string | null = this.activeRoute.snapshot.paramMap.get('id');
     const productCollection: string | null = this.activeRoute.snapshot.paramMap.get('clotheCollection');
@@ -114,6 +100,31 @@ export class RecomendationsComponent {
     this.router.navigate(['/collection', clotheCollection])
   }
 
+  addToCart(event: Event, size: string) {
+    const button = event.target as HTMLElement;
+    const productJson = button.getAttribute('data-product');
+    const product = productJson ? JSON.parse(productJson) : {};
+    
+    const productToAdd = {
+      ...product,
+      quantity: 1,
+      size: size
+    };
+    this.cartService.addToCart(productToAdd);
+    Swal.fire({
+      showConfirmButton: false,
+      timer: 2000,
+      title: "<strong>Yay!<strong>",
+      html: `
+      <p style="color: #939393;"> Producto agregado al carrito </p>
+    `,
+      imageUrl: "/img/bunny-congrats.gif",
+      imageHeight: 150,
+      color: "#ff4372",
+      background: "#e6e8da",
+      width: 500
+    });
+  }
 }
 
 

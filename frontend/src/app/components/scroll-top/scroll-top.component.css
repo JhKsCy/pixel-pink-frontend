@@ -3,7 +3,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #ffffff;
+    background-color: #e6e8da;
     color: #FF4372;
     border: none;
     border-radius: 8%;
@@ -16,6 +16,6 @@
 
 .scroll-to-top:hover {
     background-color: #FF4372;
-    color: #ffffff;
+    color: #e6e8da;
     
 }

@@ -27,7 +27,8 @@ export class CartService {
 
   addToCart(product: any): void {
     let cart = this.getCart();
-    const existingProduct = cart.find(p => p._id === product._id);
+    const existingProduct = cart.find(p => p._id === product._id && p.size == product.size
+    );
 
     if (existingProduct) {
       existingProduct.quantity += product.quantity;

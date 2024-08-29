@@ -44,4 +44,27 @@
     color: #ffffff; 
     font-size: 16px;
     font-family: unset;
+    text-transform: uppercase;
+}
+
+.cards__title {
+    margin-top: 60px;
+    padding-left: 40px;
+    text-transform: uppercase;
+    line-height: 0;
+}
+.cards__subtitle{
+    color: #e6e8da;
+    text-align: end;
+    margin-right: 13%;
+}
+.cards__subtitle a {
+    color: #e6e8da;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all .5s;
+}
+.cards__subtitle a:hover {
+    text-decoration: underline;
+    margin-left: 10px;
 }

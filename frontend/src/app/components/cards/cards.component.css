@@ -75,12 +75,14 @@
 .card-body__info-hover {
     text-align: center;
 }
-.card-body__info-hover a {
+.card-body__info-hover button {
     margin: 5%;
     color: #ff4372;
     text-decoration: none;
     font-weight: bolder;
-    cursor: pointer 
+    cursor: pointer;
+    background: transparent;
+    border: none;
 }
 .card-body__info-hover span {
     display: block;

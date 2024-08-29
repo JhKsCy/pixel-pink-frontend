@@ -1,5 +1,4 @@
 <div class="header__collection">
-    <a href="">Pixel - pink</a>
     <img src="img/header-yena-2.png" class="d-block w-100" alt="...">
 </div>
 
@@ -13,60 +12,6 @@
                 Explora
             </a>
             <i class="fa-solid fa-arrow-right"></i>
-        </div>
-    </div>
-    <div class="cards-container">
-        <div *ngFor="let product of products" class="card" data-id="{{product.id}}"
-            (mouseenter)="product.isHovered = true" 
-            (mouseleave)="product.isHovered = false">
-            <img (click)="openProduct(product._id)" [src]="product.isHovered ? product.imgC : product.imgA" alt="...">
-            <div class="card-body" *ngIf="!product.isHovered">
-                <div class="card-body__info">
-                    <a>
-                        {{ product.name }}
-                    </a>
-                    <p> 
-                        ${{ product.price }} 
-                    </p>
-                </div>
-                <div class="card-body__tag">
-                    <button data-id="{{product.id}}">
-                        <i class="fa-regular fa-star"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="card-body-hover" *ngIf="product.isHovered" data-id="{{product.id}}">
-                <div class="card-body__info-hover">
-                    <div>
-                        <a (mouseenter)="show()" (mouseleave)="show()">
-                            XS
-                        </a>
-                        <a (mouseenter)="show()" (mouseleave)="show()">
-                            S
-                        </a>
-                        <a (mouseenter)="show()" (mouseleave)="show()">
-                            M
-                        </a>
-                        <a (mouseenter)="show()" (mouseleave)="show()">
-                            L
-                        </a>
-                        <a (mouseenter)="show()" (mouseleave)="show()">
-                            XL
-                        </a>
-                    </div>
-                    <div>
-                        <span class="hover-text" [class.hidden]="cartTextHidden">
-                            Añade al carrito
-                        </span>
-                    </div>
-                </div>
-                <div class="card-body__tag">
-                    <button class="btn-view-hover" (click)="goToCollecion(product.clotheCollection)">
-                        <a> {{ product.clotheCollection }} Collection </a>
-                        <i class="fa-regular fa-star"></i>
-                    </button>
-                </div>
-            </div>
         </div>
     </div>
 </section>

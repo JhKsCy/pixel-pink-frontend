@@ -1,24 +1,60 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { CardsService } from '../../services/cards.service';
+import { CardsComponent } from '../cards/cards.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-categorias',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, CardsComponent, FooterComponent],
   templateUrl: './categorias.component.html',
   styleUrl: './categorias.component.css'
 })
 export class CategoriasComponent {
 
-  productos = [
-    { nombre: 'Producto 1', categoria: 'CAMISETAS/TOPS' },
-    { nombre: 'Producto 2', categoria: 'HOODIES' },
-    { nombre: 'Producto 3', categoria: 'VESTIDOS' },
-    { nombre: 'Producto 4', categoria: 'SWEATERS' },
-  
-  ];
-  productosFiltrados = [...this.productos]; // Inicialmente muestra todos los productos
+  filteredCategory : boolean = false;
 
-  filterCategory(categoria: string) {
-    this.productosFiltrados = this.productos.filter(producto => producto.categoria === categoria);
+  constructor(private cardsService: CardsService, private router: Router, private activeRoute: ActivatedRoute) {
+
+    this.router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        if (evt.url.includes('category')) {
+          this.router.routeReuseStrategy.shouldReuseRoute = function () {
+            return false;
+          };
+        }
+        this.router.navigated = false;
+        window.scrollTo(0, 0);
+      }
+    });
+
   }
+
+  ngOnInit(): void {
+    if( this.activeRoute.snapshot.paramMap.get('category') ){
+      this.filteredCategory = true;
+    } else{
+      this.filteredCategory = false;
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = (
+      future: any,
+      curr: any
+    ) => {
+      return future.routeConfig === curr.routeConfig;
+    };
+  }
+
+  filterCategory(category: string): void {
+    this.router.navigate(['/category', category])
+  }
+
+  showAllProducts(): void {
+    this.router.navigate(['/category'])
+  }
+
 }
