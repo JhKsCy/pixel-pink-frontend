@@ -1,29 +1,43 @@
 <div class="container">
-    <!-- Secciones de productos -->
     <div class="sections">
-        <div class="item" (click)="filterCategory('CAMISETAS/TOPS')">
+        <div class="item" (click)="filterCategory('top')">
             <div class="circle">
-                <img src="assets-categorias/categorias-camisetas.png" alt="Camisetas">
+                <img src="assets-categorias/categorias-camisetas.png" alt="Tops">
             </div>
-            <div class="label">CAMISETAS/TOPS</div>
+            <div class="label">Tops</div>
         </div>
-        <div class="item" (click)="filterCategory('HOODIES')">
+        <div class="item" (click)="filterCategory('sweater')">
             <div class="circle">
-                <img src="assets-categorias/categorias-hoodie.png" alt="Hoodies">
+                <img src="assets-categorias/categorias-hoodie.png" alt="Sweaters">
             </div>
-            <div class="label">HOODIES</div>
+            <div class="label">Sweaters</div>
         </div>
-        <div class="item" (click)="filterCategory('VESTIDOS')">
+        <div class="item" (click)="filterCategory('dress')">
             <div class="circle">
                 <img src="assets-categorias/categorias-vestidos.png" alt="Vestidos">
             </div>
-            <div class="label">VESTIDOS</div>
+            <div class="label">Vestidos</div>
         </div>
-        <div class="item" (click)="filterCategory('SWEATERS')">
+        <div class="item" (click)="filterCategory('bottom')">
             <div class="circle">
-                <img src="assets-categorias/categorias-sweater.png" alt="Sweaters">
+                <img src="assets-categorias/categorias-sweater.png" alt="Pantalones">
             </div>
-            <div class="label">SWEATERS</div>
+            <div class="label">Pantalones</div>
         </div>
     </div>
 </div>
+
+<app-cards></app-cards>
+
+<section *ngIf="filteredCategory">
+    <div class="cards__title">
+        <div class="cards__subtitle">
+            <i class="fa-solid fa-arrow-left"></i>
+            <a (click)="showAllProducts()">
+                Ver todos los productos
+            </a>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

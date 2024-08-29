@@ -62,6 +62,7 @@ export class CardsComponent {
   allProducts(): void {
     const productId: string | null = this.activeRoute.snapshot.paramMap.get('id');
     const productCollection: string | null = this.activeRoute.snapshot.paramMap.get('clotheCollection');
+    const productCategory: string | null = this.activeRoute.snapshot.paramMap.get('category');
     
     this.cardsService.getAllProducts().subscribe(
       response => {
@@ -74,6 +75,10 @@ export class CardsComponent {
   
         if (productCollection) {
           filteredProducts = filteredProducts.filter(x => x.clotheCollection === productCollection);
+        }
+
+        if (productCategory) {
+          filteredProducts = filteredProducts.filter(x => x.category === productCategory);
         }
   
         console.log(filteredProducts);
@@ -108,7 +113,19 @@ export class CardsComponent {
       size: size
     };
     this.cartService.addToCart(productToAdd);
-    Swal.fire("Producto añadido al carrito");
+    Swal.fire({
+      showConfirmButton: false,
+      timer: 2000,
+      title: "<strong>Yay!<strong>",
+      html: `
+      <p style="color: #939393;"> Producto agregado al carrito </p>
+    `,
+      imageUrl: "/img/bunny-congrats.gif",
+      imageHeight: 150,
+      color: "#ff4372",
+      background: "#e6e8da",
+      width: 500
+    });
   }
 
 }

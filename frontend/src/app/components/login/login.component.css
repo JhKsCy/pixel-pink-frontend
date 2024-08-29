@@ -3,8 +3,8 @@
     border-radius: 10px;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
-    height: 600px;
-    margin: 50px 33%;
+    height: 625px;
+    margin: 90px 33% 66px;
     justify-items: center;
     align-items: center;
 }

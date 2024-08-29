@@ -96,12 +96,36 @@ export class ProductComponent {
 
   addToCart() {
     if (!this.selectedSize) {
-        Swal.fire("Por favor, selecciona una talla antes de agregar al carrito.");
+        Swal.fire({
+          showConfirmButton: false,
+          timer: 2100,
+          title: "<strong>Ups!<strong>",
+          html: `
+          <p style="color: #939393;"> Selecciona una talla antes de agregar al carrito </p>
+        `,
+          imageUrl: "/img/bunny-ups.gif",
+          imageHeight: 150,
+          color: "#ff4372",
+          background: "#e6e8da",
+          width: 500,
+        });
         return;
     }
 
     if (this.cartQuantity <= 0) {
-        Swal.fire("La cantidad debe ser mayor a 0.");
+      Swal.fire({
+        showConfirmButton: false,
+        timer: 2100,
+        title: "<strong>Ups!<strong>",
+        html: `
+        <p style="color: #939393;"> Debes agregar mínimo un articulo </p>
+      `,
+        imageUrl: "/img/bunny-ups.gif",
+        imageHeight: 150,
+        color: "#ff4372",
+        background: "#e6e8da",
+        width: 500,
+      });
         return;
     }
 
@@ -112,7 +136,19 @@ export class ProductComponent {
           size: this.selectedSize
       };
       this.cartService.addToCart(productToAdd);
-      Swal.fire("Producto añadido al carrito");
+      Swal.fire({
+        showConfirmButton: false,
+        timer: 2000,
+        title: "<strong>Yay!<strong>",
+        html: `
+        <p style="color: #939393;"> Producto agregado al carrito </p>
+      `,
+        imageUrl: "/img/bunny-congrats.gif",
+        imageHeight: 150,
+        color: "#ff4372",
+        background: "#e6e8da",
+        width: 500
+      });
     }
 }
 

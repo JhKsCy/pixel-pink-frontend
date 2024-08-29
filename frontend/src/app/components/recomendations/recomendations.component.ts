@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd, RouterLink } from '@angular/router';
 import { CardsService } from '../../services/cards.service';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-recomendations',
   standalone: true,
-  imports: [ CommonModule, CarouselModule, ButtonModule, TagModule ],
+  imports: [ CommonModule, CarouselModule, ButtonModule, TagModule, RouterLink ],
   templateUrl: './recomendations.component.html',
   styleUrl: './recomendations.component.css'
 })
@@ -111,7 +111,19 @@ export class RecomendationsComponent {
       size: size
     };
     this.cartService.addToCart(productToAdd);
-    Swal.fire("Producto añadido al carrito");
+    Swal.fire({
+      showConfirmButton: false,
+      timer: 2000,
+      title: "<strong>Yay!<strong>",
+      html: `
+      <p style="color: #939393;"> Producto agregado al carrito </p>
+    `,
+      imageUrl: "/img/bunny-congrats.gif",
+      imageHeight: 150,
+      color: "#ff4372",
+      background: "#e6e8da",
+      width: 500
+    });
   }
 }
 

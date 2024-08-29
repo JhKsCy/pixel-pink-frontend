@@ -67,7 +67,10 @@
             </div>
     
             <div>
-                <button class="buy-button">
+                <button *ngIf="!isLoggedIn" class="buy-button" (click)="toBuyNL()">
+                    Comprar
+                </button>
+                <button *ngIf="isLoggedIn" class="buy-button" (click)="toBuy()">
                     Comprar
                 </button>
             </div>
@@ -75,7 +78,7 @@
 
         <div class="no-products" *ngIf="emptyCart">
             <div>
-                <img src="/img/bunny-sorry.webp">
+                <img src="/img/bunny-sorry.gif">
                 <h5>
                     Lo sentimos!
                 </h5>

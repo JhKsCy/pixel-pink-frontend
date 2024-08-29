@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
-import { MatSidenavModule, MatSidenav  } from '@angular/material/sidenav';
-import { CartService } from '../../services/cart.service';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit, ViewChild  } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatSidenavModule, MatSidenav  } from '@angular/material/sidenav';
 import { Subscription } from 'rxjs'
+import { AuthService } from '../../services/auth.service';
+import { CartService } from '../../services/cart.service';
 
 
 @Component({
@@ -19,7 +21,7 @@ export class CartComponent implements OnInit {
   emptyCart : boolean = false;
   private cartSubscription: Subscription = new Subscription();
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router: Router, private authsService: AuthService) {}
 
   ngOnInit(): void {
     this.cartSubscription = this.cartService.cart$.subscribe(cart => {
@@ -30,7 +32,7 @@ export class CartComponent implements OnInit {
       } else{
         this.emptyCart = false;
       }
-    } 
+    }
   );
 
     this.cartService.cartToggle$.subscribe(() => {
@@ -40,6 +42,10 @@ export class CartComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.cartSubscription.unsubscribe();
+  }
+
+  get isLoggedIn(): boolean {
+    return this.authsService.isLoggedIn()
   }
 
   sumQuantity(product: any): void {
@@ -76,5 +82,14 @@ export class CartComponent implements OnInit {
     return this.getSubtotal();
   }
 
+  toBuyNL() {
+    this.router.navigate(['/login'])
+    this.sidenav.toggle()
+  }
+
+  toBuy() {
+    this.router.navigate(['/'])
+    this.sidenav.toggle()
+  }
 
 }
