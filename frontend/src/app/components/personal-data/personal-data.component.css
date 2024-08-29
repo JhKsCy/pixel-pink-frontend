@@ -8,39 +8,13 @@ body {
     background-color: #f0f0f0;
 }
 
-.step-circles {
-    display: flex;
-    justify-content: center;
-    margin-top: 160px;
-    margin-bottom: 51px;
-}
-
-.step-circle {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid #E6E8DA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #E6E8DA;
-    margin: 0 50px;
-}
-
-.step-circle.active {
-    background-color: #f5f5dc; /* Color crema */
-    color: #000;
-}
-
 .container {
     background-color: #E6E8DA;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 91%;
     max-width: 90%;
-    margin: 0 auto;
+    margin: 20% auto;
 }
 
 .input-container-Data {
@@ -50,7 +24,8 @@ body {
 
 .input-container-Data h2 {
     font-size: 30px;
-    font-weight: bolder;
+    font-weight: 900;
+    letter-spacing: 1px;
     color: #000000;
     
 }
@@ -79,7 +54,7 @@ body {
     display: block;
     margin-bottom: 5px;
     color: #000000;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bolder;
     margin-left: 10px;;
 }
@@ -96,7 +71,8 @@ body {
 .continue-button {
     background-color: #FF4372;
     color: #fff;
-    border: none;
+    text-decoration: none;
+    text-align: center;
     padding: 10px;
     cursor: pointer;
     font-size: 16px;

@@ -1,3 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.step-circles {
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+    margin-bottom: 20px;
+}
+.step-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #E6E8DA; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #E6E8DA;
+    margin: 0 50px;
+}
+.step-circle.active {
+    background-color: #E6E8DA; 
+    color: #000000;
+    margin-left: 3%;
+}
 .container {
     background-color: #E6E8DA;
     padding: 20px;
@@ -5,7 +37,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 41px;
     max-width: 90%;
 }
 
@@ -16,9 +48,10 @@
     letter-spacing: 1px;
 }
 
+
 .title {
     font-size: 30px;
-    font-weight: bolder;
+    font-weight: 900;
     text-align: left;
     margin: 20px 0 80px; 
 }
@@ -62,7 +95,7 @@
     font-weight: bolder;
 }
 .heart {
-    color:#FF4372 ;
+    color:#e91e84 ;
 }
 
 .add-button {
@@ -81,4 +114,8 @@
 
 .add-button:hover {
     background-color: #e91e84;
+}
+.required-asterisk {
+    color: #e91e84
+    ;
 }

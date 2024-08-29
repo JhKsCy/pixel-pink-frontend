@@ -1,17 +1,23 @@
-<div class="container">
-    <p class="title"><strong>Tu información</strong></p>
+    <div class="step-circles">
+    <div class="step-circle active">1</div>
+    <div class="step-circle active">2</div>
+    <div class="step-circle">3</div>
+    </div>
+    
+    <div class="container">
+    <p class="title"><strong>Tu información</strong><span class="required-asterisk">*</span></p>
     <p class="name">Juliana Ospina <span class="heart">♡</span></p><br> <br>
     <p>Calle 67#5-27</p>
     <p>Bogotá DC, Colombia</p>
-    <p>*57 3239068680</p>
+    <p>+57 3239068680</p>
     <div class="line"></div>
     <div class="actions">
         <p>Predeterminado</p>
         <div>
-            <a href="#">Editar</a> |
+            <a routerLink="/personalData">Editar</a> |
             <a href="#">Eliminar</a>
         </div>
     </div>
-    <a href="#" class="add-button">Agregar nueva dirección</a>
+    <a routerLink="/payment" class="add-button">Continuar</a>
 </div>
 

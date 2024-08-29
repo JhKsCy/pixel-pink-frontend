@@ -1,4 +1,5 @@
 body {
+    cursor: url('/cursor/descarga-removebg-preview.png') 16 16, auto;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -7,14 +8,18 @@ body {
     margin: 0;
     background-color: #f0f0f0;
 }
+.custom-cursor {
+    cursor: url('/removebg-preview.png') 16 16, auto;
+  }
 .container {
     background-color: #E6E8DA;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    max-width: 90%;
     text-align: center;
     margin-top: 41px;
+    height: 75%;
 }
 .step-circles {
     display: flex;
@@ -43,6 +48,7 @@ p {
     color: #000;
     font-weight: bolder;
     margin-left: 9%;
+    font-size: 20px;
 }
 .input-container {
     margin-bottom: 15px;
@@ -50,12 +56,12 @@ p {
     
 }
 .input-container label {
-    display: block;
+    
     margin-bottom: 5px;
     color: #000000;
     font-size: 30px;
-    font-weight: bolder;
-    margin: 20px 101px 80px;
+    font-weight: 900;
+    margin: 1% 0% 0% 3%;
 }
 .input-container input {
     width: 45%;
@@ -68,15 +74,18 @@ p {
     box-shadow: none; 
 }
 .continue-button {
-    background-color: #FF4372; 
+    display: inline-block;
+    background-color: #e91e63; 
     color: #E6E8DA;
+    text-decoration: none;
     border: none;
     padding: 5px;
     border-radius: 0px;
     cursor: pointer;
     font-size: 20px;
     width: 45%;
-    margin-right: 39%;
+    margin-left: 50%;
+    margin-top: 25%;
 }
 .continue-button:hover {
     background-color: #e91e63;
@@ -86,4 +95,9 @@ p {
 }
 .required-asterisk {
     color: #e91e84;
+}
+.error-message {
+    color: #e91e84;
+    font-size: 14px;
+    margin-top: 5px;
 }

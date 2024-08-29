@@ -45,26 +45,32 @@ body {
 }
 
 .payment-options {
-    margin-bottom: 20px;
+    margin-bottom: 90px 0px 30px 0px;
 }
 
 .payment-options h2 {
     font-size: 30px;
-    font-weight: bolder;
-    color: #333;
-    margin-bottom: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #000000;
+    margin-top: 2%;
+}
+img {
+    height: 100px;
+    
 }
 
 .payment-option {
-    display: flex;
+    
     align-items: center;
     margin-bottom: 15px;
     cursor: pointer;
     border: 2px solid transparent;
     border-radius: 5px;
-    padding: 10px;
+    padding: 2%;
     transition: border-color 0.3s;
     font-size: 24px;
+    margin: 7% 35% 5% 35%
 }
 
 .payment-option input[type="radio"] {
@@ -88,12 +94,15 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     font-size: 18px;
-    width: 100%;
-    max-width: 200px;
+    width: 45%;
     margin: 20px auto 0;
+    margin-left: 2%;
     transition: background-color 0.3s;
 }
 
 .continue-button:hover {
     background-color: #e91e84;
+}
+.required-asterisk {
+    color: #e91e84;
 }
