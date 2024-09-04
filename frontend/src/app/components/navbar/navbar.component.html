@@ -11,7 +11,7 @@
                 <li><a routerLink="/">Inicio</a></li>
                 <li><a routerLink="/category">Categorias</a></li>
                 <li><a routerLink="/collection/Pink-Goth">Ultima colección</a></li>
-                <li><a routerLink="/">Preventa</a></li>
+                <li><a (click)="noPresell()">Preventa</a></li>
             </ul>
         </div>
     </div>
@@ -36,7 +36,7 @@
         </ul>
         <ul *ngIf="isLoggedIn">
             <li>
-                <a routerLink="/">Direcciones</a>
+                <a (click)="toData()">Tus datos</a>
             </li>
             <div class="horizontal-bar"></div>
             <li>

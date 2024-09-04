@@ -19,6 +19,7 @@ export class CartComponent implements OnInit {
   cartProducts: any[] = [];
   cartQuantity: number = 1;
   emptyCart : boolean = false;
+  id: any = sessionStorage.getItem('userId');
   private cartSubscription: Subscription = new Subscription();
 
   constructor(private cartService: CartService, private router: Router, private authsService: AuthService) {}
@@ -88,7 +89,8 @@ export class CartComponent implements OnInit {
   }
 
   toBuy() {
-    this.router.navigate(['/'])
+    const id = sessionStorage.getItem('userId');
+    this.router.navigate([`/purchase/${id}`])
     this.sidenav.toggle()
   }
 

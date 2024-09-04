@@ -22,15 +22,51 @@ export class SusbcribeComponent {
     this.authService.susbcribe(this.name, this.email).subscribe(
       response => {
         if(response.ok){
-          Swal.fire('Thanks for your subscription', response.msg, 'success')
+          Swal.fire({
+            showConfirmButton: false,
+            timer: 2000,
+            title: "<strong>Yay!<strong>",
+            html: `
+            <p style="color: #939393;"> Gracias por tu suscripción </p>
+          `,
+            imageUrl: "/img/bunny-congrats.gif",
+            imageHeight: 150,
+            color: "#ff4372",
+            background: "#e6e8da",
+            width: 500
+          });
         }
         else {
-          Swal.fire('Error', response.error.msg, 'error')
+          Swal.fire({
+            showConfirmButton: false,
+            timer: 2100,
+            title: "<strong>Ups!<strong>",
+            html: `
+            <p style="color: #939393;"> Ingresa datos válidos </p>
+          `,
+            imageUrl: "/img/bunny-ups.gif",
+            imageHeight: 150,
+            color: "#ff4372",
+            background: "#e6e8da",
+            width: 500,
+          });
         }
       },
       error => {
         console.log(error)
-        Swal.fire('Error', error.error.msg, 'error')
+        Swal.fire({
+          showConfirmButton: false,
+          timer: 2100,
+          title: "<strong>Ups!<strong>",
+          html: `
+          <p style="color: #939393;"> Por favor contactate con soporte </p>
+        `,
+          imageUrl: "/img/bunny-ups.gif",
+          imageHeight: 150,
+          color: "#ff4372",
+          background: "#e6e8da",
+          width: 500,
+        });
       }
     )
   }

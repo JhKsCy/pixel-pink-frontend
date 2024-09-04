@@ -41,6 +41,25 @@ export class NavbarComponent {
     return this.authsService.isLoggedIn()
   }
 
+  toData() {
+    const userId = sessionStorage.getItem('userId');
+    if (userId) {
+      this.router.navigate([`/data/${userId}`]);
+    } else {
+      Swal.fire({
+        showConfirmButton: false,
+        timer: 2000,
+        title: "<strong>Error!</strong>",
+        text: "Usuario no encontrado, por favor comunicate con soporte",
+        imageUrl: "/img/bunny-ups.gif",
+        imageHeight: 150,
+        color: "#939393",
+        background: "#e6e8da",
+        width: 500,
+      });
+    }
+  }
+
   logout() {
     Swal.fire({
       title: "<strong>Hey!<strong>",
@@ -72,6 +91,23 @@ export class NavbarComponent {
         });
       }
     });
+  }
+
+  noPresell() {
+    Swal.fire({
+      showConfirmButton: false,
+      timer: 2100,
+      title: "<strong>Ups!<strong>",
+      html: `
+      <p style="color: #939393;"> Por el momento nuestra preventa no está abierta </p>
+    `,
+      imageUrl: "/img/bunny-ups.gif",
+      imageHeight: 150,
+      color: "#ff4372",
+      background: "#e6e8da",
+      width: 500,
+    });
+      return;
   }
 
 }

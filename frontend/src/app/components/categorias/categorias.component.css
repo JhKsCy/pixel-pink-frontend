@@ -6,9 +6,9 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 130px; 
+    gap: 10%;
     margin-bottom: 30px;
-    margin-top: 105px;
+    margin-top: 80px;
 }
 
 .item {
@@ -19,15 +19,20 @@
 }
 
 .circle {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 2px solid #ccc;
+    border: 5px solid #e6e8da;
     overflow: hidden;
     position: relative;
+    margin-top: 20px;
+}
+
+.circle:hover {
+    border: 5px solid #ff4372;
 }
 
 .circle img {
@@ -35,15 +40,15 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    border: 2px solid #ff4372;
 }
 
 .label {
     text-align: center;
     margin-top: 10px; 
     font-weight: bold;
-    color: #ffffff; 
-    font-size: 16px;
-    font-family: unset;
+    color: #e6e8da; 
+    font-size: 18px;
     text-transform: uppercase;
 }
 
@@ -67,4 +72,9 @@
 .cards__subtitle a:hover {
     text-decoration: underline;
     margin-left: 10px;
+    cursor: pointer;
+}
+
+.selected__category {
+    border: 5px solid #ff4372;
 }

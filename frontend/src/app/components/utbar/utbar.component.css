@@ -9,7 +9,7 @@
     grid-template-columns: 1fr;
     align-content: center;
     justify-items: center;
-    z-index: 1;
+    z-index: 5;
 
     width: 100%;
     overflow: hidden;

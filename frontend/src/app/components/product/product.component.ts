@@ -1,16 +1,15 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { CardsService } from '../../services/cards.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { RecomendationsComponent } from '../recomendations/recomendations.component';
-import { FooterComponent } from '../footer/footer.component';
 import { CartService } from '../../services/cart.service';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [ CommonModule, RouterLink, RecomendationsComponent, FooterComponent],
+  imports: [ CommonModule, RouterLink, RecomendationsComponent],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })

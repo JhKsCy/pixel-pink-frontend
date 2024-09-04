@@ -179,3 +179,101 @@
     text-decoration: none;
     color: #939393;
 }
+
+
+
+
+@media (max-width: 1024px) {
+    .clothe-card {
+        margin: 50px 5%;
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .clothe-card__slide {
+        align-content: center;
+        justify-self: auto;
+        text-align: -webkit-center;
+        margin-top: 5%;
+    }
+    .clothe-card__slide p {
+        margin: 5% 15%;
+    }
+    .clothe-card__slide img {
+        height: 400px;
+    }
+    .half-carousel {
+        width: 80%;
+    }
+    .clothe-card__info {
+        margin-left: 0;
+        grid-template-rows: auto;
+        padding: 5% 15%;
+    }
+    .clothe-card__info-title h2 {
+        font-size: 35px;
+    }
+    .clothe-card__info-title p {
+        font-size: 16px;
+    }
+    .clothe-card__info-description p {
+        padding-right: 0%;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .clothe-card {
+        margin: 30px 2%;
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .clothe-card__slide img {
+        height: 250px;
+    }
+    .half-carousel {
+        width: 100%;
+    }
+    .clothe-card__info {
+        margin-left: 0;
+        grid-template-rows: auto;
+        padding: 5% 15%;
+    }
+    .clothe-card__info-title h2 {
+        font-size: 28px;
+    }
+    .clothe-card__info-title p {
+        font-size: 14px;
+    }
+    .clothe-card__cart-button {
+        width: 100%;
+    }
+    .clothe-card__slide img {
+        height: 400px;
+    }
+}
+
+
+@media (max-width: 570px) {
+    .size-button {
+        height: 50px;
+        width: 50px;
+    }
+    .accent {
+        height: 50px;
+        width: 50px;
+    }
+    .clothe-card__info-cart button {
+        height: 35px;
+        width: 50px;
+    }
+    .clothe-card__cart-button {
+        width: 170px !important;
+    }
+    .clothe-card__slide img {
+        height: 400px;
+    }
+
+}

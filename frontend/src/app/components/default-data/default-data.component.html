@@ -1,23 +1,53 @@
-    <div class="step-circles">
-    <div class="step-circle active">1</div>
-    <div class="step-circle active">2</div>
-    <div class="step-circle">3</div>
-    </div>
-    
-    <div class="container">
-    <p class="title"><strong>Tu información</strong><span class="required-asterisk">*</span></p>
-    <p class="name">Juliana Ospina <span class="heart">♡</span></p><br> <br>
-    <p>Calle 67#5-27</p>
-    <p>Bogotá DC, Colombia</p>
-    <p>+57 3239068680</p>
-    <div class="line"></div>
-    <div class="actions">
-        <p>Predeterminado</p>
-        <div>
-            <a routerLink="/personalData">Editar</a> |
-            <a href="#">Eliminar</a>
+<div class="container" *ngIf="userData">
+    <div>
+        <div class="container__info">
+            <h3 class="title">
+                Tus datos
+                <span class="heart">⟡˙⋆</span>
+            </h3>
+            <div class="container__info-data" *ngIf="!emptyData">
+                <div>
+                    <p class="bold">
+                        {{userData.name}} {{userData.lastName}} 
+                    </p>
+                    <p class="phone">
+                        +57 {{userData.phone}}
+                    </p>
+                </div>
+                <p>
+                    {{userData.address}}, {{userData.detail}}
+                </p>
+                <p>
+                    {{userData.city}}, {{userData.state}}
+                </p>
+            </div>
+            <div *ngIf="emptyData" class="container__info-emptydata">
+                <p>
+                    Aún no tienes ningúna dirección guardada
+                    <span class="heart">!!</span>
+                </p>
+            </div>
+        </div>
+        <div class="line">
+        </div>
+        <div class="actions" *ngIf="!emptyData">
+            <div class="actions-selected">
+                <span class="heart">♡</span>
+                <p class="bold">
+                    Predeterminado
+                </p>
+            </div>
+            <div>
+                <a (click)="toData()">
+                    Editar
+                </a> 
+            </div>
+        </div>
+        <div class="actions-button" *ngIf="emptyData">
+            <a (click)="toData()" class="add-button">
+                Crear una nueva dirección
+            </a>
         </div>
     </div>
-    <a routerLink="/payment" class="add-button">Continuar</a>
 </div>
 

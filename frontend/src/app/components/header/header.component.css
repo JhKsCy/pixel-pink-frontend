@@ -16,6 +16,7 @@
 }
 #oneLineLink {
     top: 37%;
+    cursor: pointer;
 }
 .header__info a {
     font-family: "Anton", sans-serif;
@@ -23,10 +24,13 @@
     text-decoration: underline;
     position: absolute;
     top: 25%;
-    left: 35%;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 110px;
     text-shadow: #ff4372 -4px 3px;
     line-height: 135px;
+    font-weight: 600;
+    text-align: center;
 }
 .header__carrousel button {
     width: 10%;

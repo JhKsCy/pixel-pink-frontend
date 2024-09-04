@@ -1,19 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FooterComponent } from '../footer/footer.component';
 import { CardsComponent } from '../cards/cards.component';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
   selector: 'app-collection',
   standalone: true,
-  imports: [ CommonModule, FooterComponent, CardsComponent ],
+  imports: [ CommonModule, CardsComponent ],
   templateUrl: './collection.component.html',
   styleUrl: './collection.component.css'
 })
 export class CollectionComponent {
 
-  constructor( ) { }
+  collection: string | null = null;
 
+  constructor( private activeRoute: ActivatedRoute ) {}
+
+  ngOnInit(): void{
+    this.collection = this.activeRoute.snapshot.paramMap.get('clotheCollection');
+    console.log(this.collection);
+  }
 }
-

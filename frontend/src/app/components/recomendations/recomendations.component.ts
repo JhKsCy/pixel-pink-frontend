@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd, RouterLink } from '@angular/router';
 import { CardsService } from '../../services/cards.service';
 import { CarouselModule } from 'primeng/carousel';
@@ -20,6 +20,8 @@ export class RecomendationsComponent {
   product: any
   products: any [] = []
   cartTextHidden: boolean = true
+  numVisible = 5;
+  numScroll = 5;
 
   constructor(private cardsService: CardsService, private router: Router, private activeRoute: ActivatedRoute, private cartService: CartService) {
 
@@ -51,6 +53,7 @@ export class RecomendationsComponent {
     }
 
     this.allProducts()
+    this.adjustCarousel(window.innerWidth);
   }
 
   ngOnDestroy(): void {
@@ -124,6 +127,31 @@ export class RecomendationsComponent {
       background: "#e6e8da",
       width: 500
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    const width = (event.target as Window).innerWidth;
+    this.adjustCarousel(width);
+  }
+
+  adjustCarousel(width: number): void {
+    if (width <= 640) {
+      this.numVisible = 1;
+      this.numScroll = 1;
+    } else if (width <= 920) {
+      this.numVisible = 2;
+      this.numScroll = 2;
+    } else if (width <= 1200) {
+      this.numVisible = 3;
+      this.numScroll = 3;
+    } else if (width <= 1500) {
+      this.numVisible = 4;
+      this.numScroll = 4;
+    } else {
+      this.numVisible = 5;
+      this.numScroll = 5;
+    }
   }
 }
 

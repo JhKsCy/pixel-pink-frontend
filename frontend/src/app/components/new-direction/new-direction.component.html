@@ -1,46 +1,52 @@
-
-
-<div class="container">
-    <div class="form-row">
-        <div class="form-column">
-            <div class="input-container-Data">
-                <h2>Nueva direccion</h2>
-            </div>
-            <div class="input-container">
-                <label for="firstName">Nombres<span class="required-asterisk">*</span></label>
-                <input type="text" id="firstName" placeholder="Ingresa tu nombre">
-            </div>
-            <div class="input-container">
-                <label for="lastName">Apellidos<span class="required-asterisk">*</span></label>
-                <input type="text" id="lastName" placeholder="Ingresa tu apellido">
-            </div>
-            <div class="input-container">
-                <label for="phone">Celular<span class="required-asterisk">*</span></label>
-                <input type="text" id="phone" placeholder="Ingresa tu número de celular">
-            </div>
-            <div class="input-container">
-                <label for="password">Contraseña<span class="required-asterisk">*</span></label>
-                <input type="password" id="password" placeholder="Ingresa tu contraseña">
-            </div>
-        </div>
-        <div class="form-column">
-            <div class="input-container">
-                <label for="department">Departamento<span class="required-asterisk">*</span></label>
-                <input type="text" id="department" placeholder="Ingresa tu departamento">
-            </div>
-            <div class="input-container">
-                <label for="city">Ciudad<span class="required-asterisk">*</span></label>
-                <input type="text" id="city" placeholder="Ingresa tu ciudad">
-            </div>
-            <div class="input-container">
-                <label for="address">Dirección<span class="required-asterisk">*</span></label>
-                <input type="text" id="address" placeholder="Ingresa tu dirección">
-            </div>
-            <div class="input-container">
-                <label for="building">Torre/Apartamento/Conjunto<span class="required-asterisk">*</span></label>
-                <input type="text" id="building" placeholder="Ingresa la torre">
-            </div>
-            <a routerLink="/default" class="continue-button">Continuar</a>
-        </div>
+<div class="container" *ngIf="userData">
+    <div class="input-container-Data">
+        <h2>
+            Tus datos
+            <span class="heart">⟡˙⋆</span>
+        </h2>
+        <p>
+            Recuerda verificar todos los campos antes de realizar cualquier compra
+        </p>
     </div>
+    <form [formGroup]="formGroup" (submit)="onSubmit($event)">
+        <div class="form-row">
+            <div class="form-column">
+                <div class="input-container">
+                    <label for="firstName">Nombres<span class="required-asterisk">*</span></label>
+                    <input formControlName="name" (input)="itsValid()" name="name" type="name" required placeholder="Ingresa tu nombre">
+                </div>
+                <div class="input-container">
+                    <label for="lastName">Apellidos<span class="required-asterisk">*</span></label>
+                    <input formControlName="lastName" (input)="itsValid()" name="lastName" type="lastName" required placeholder="Ingresa tu apellido">
+                </div>
+                <div class="input-container">
+                    <label for="phone">Celular<span class="required-asterisk">*</span></label>
+                    <input formControlName="phone" (input)="itsValid()" name="phone" type="phone" required placeholder="Ingresa numero de celular">
+                </div>
+                <div class="input-container">
+                    <label for="password">Observaciones<span class="required-asterisk">*</span></label>
+                    <input formControlName="observations" (input)="itsValid()" name="observations" type="observations" required placeholder="Para ayudarnos a encontrar tu dirección">
+                </div>
+            </div>
+            <div class="form-column">
+                <div class="input-container">
+                    <label for="department">Departamento<span class="required-asterisk">*</span></label>
+                    <input formControlName="state" (input)="itsValid()" name="state" type="state" required placeholder="Ingresa tu departamento">
+                </div>
+                <div class="input-container">
+                    <label for="city">Ciudad<span class="required-asterisk">*</span></label>
+                    <input formControlName="city" (input)="itsValid()" name="city" type="city" required placeholder="Ingresa tu ciudad">
+                </div>
+                <div class="input-container">
+                    <label for="address">Dirección<span class="required-asterisk">*</span></label>
+                    <input formControlName="address" (input)="itsValid()" name="address" type="address" required placeholder="Ingresa tu dirección">
+                </div>
+                <div class="input-container">
+                    <label for="building">Torre/Apartamento/Conjunto<span class="required-asterisk">*</span></label>
+                    <input formControlName="detail" (input)="itsValid()" name="detail" type="detail" required placeholder="Ingresa tu apto o casa">
+                </div>
+                <button type="submit" value="send" class="continue-button">Guardar</button>
+            </div>
+        </div>
+    </form>
 </div>

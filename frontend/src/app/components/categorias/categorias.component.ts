@@ -3,12 +3,11 @@ import { Component } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { CardsService } from '../../services/cards.service';
 import { CardsComponent } from '../cards/cards.component';
-import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-categorias',
   standalone: true,
-  imports: [CommonModule, CardsComponent, FooterComponent],
+  imports: [CommonModule, CardsComponent],
   templateUrl: './categorias.component.html',
   styleUrl: './categorias.component.css'
 })

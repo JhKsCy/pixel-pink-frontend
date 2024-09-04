@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
-import { FooterComponent } from '../footer/footer.component';
 import Swal from 'sweetalert2';
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterLink, FooterComponent],
+  imports: [FormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -23,7 +22,8 @@ export class LoginComponent {
     event.preventDefault()
     this.authservice.login(this.email, this.password).subscribe(
       response => {
-        sessionStorage.setItem('token', response.token)
+        sessionStorage.setItem('token', response.token);
+        sessionStorage.setItem('userId', response.id);
         if(response.ok) {
           Swal.fire({
             showConfirmButton: false,
@@ -78,7 +78,7 @@ export class LoginComponent {
           });
         }
       }
-      
     )
   }
+
 }

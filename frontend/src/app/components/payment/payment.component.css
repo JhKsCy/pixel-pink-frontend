@@ -7,53 +7,25 @@ body {
     margin: 0;
     background-color: #f0f0f0;
 }
-
-.step-circles {
-    display: flex;
-    justify-content: center;
-    margin-top: 160px;
-    margin-bottom: 50px;
-}
-
-.step-circle {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid #E6E8DA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #E6E8DA;
-    margin: 0 50px;
-}
-
-.step-circle.active {
-    background-color: #E6E8DA;
-    color: #000;
-}
-
 .container {
     background-color: #E6E8DA;
-    padding: 20px;
+    padding: 60px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
+    max-width: 90%;
+    margin-top: 100px;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 100px;
 }
 
 .payment-options {
     margin-bottom: 90px 0px 30px 0px;
 }
-
 .payment-options h2 {
+    font-family: "Anton", sans-serif;
     font-size: 30px;
     font-weight: 900;
-    letter-spacing: 1px;
-    color: #000000;
-    margin-top: 2%;
+    text-align: left;
+    margin: 0px 0 25px;
 }
 img {
     height: 100px;
@@ -61,7 +33,6 @@ img {
 }
 
 .payment-option {
-    
     align-items: center;
     margin-bottom: 15px;
     cursor: pointer;
@@ -70,7 +41,7 @@ img {
     padding: 2%;
     transition: border-color 0.3s;
     font-size: 24px;
-    margin: 7% 35% 5% 35%
+    margin: 7% 25% 5%;
 }
 
 .payment-option input[type="radio"] {
@@ -82,27 +53,28 @@ img {
 }
 
 .payment-option input[type="radio"]:checked + label {
-    color: #e91e84;
+    color: #FF4372;
     font-weight: bolder;
 }
 
-
 .continue-button {
-    background-color: #FF4372;
-    color: #E6E8DA;
-    border: none;
+    border: solid 1px #ff4372;
+    color: #ff4372;
+    background: #e6e8da;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 18px;
-    width: 45%;
+    width: 50%;
     margin: 20px auto 0;
-    margin-left: 2%;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    font-size: medium;
 }
 
 .continue-button:hover {
-    background-color: #e91e84;
+    border: solid 1px #e6e8da;;
+    color: #e6e8da;
+    background: #ff4372;
 }
 .required-asterisk {
-    color: #e91e84;
+    color: #ff4372;
 }
