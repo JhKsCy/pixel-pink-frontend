@@ -68,3 +68,48 @@
     text-decoration: underline;
     margin-left: 10px;
 }
+@media (max-width: 768px) {
+    .sections {
+        gap: 20px; /* Reduce el espacio entre los elementos en pantallas más pequeñas */
+        margin-top: 60px; /* Ajusta el margen superior */
+    }
+
+    .item {
+        flex: 1 1 150px; /* Ajusta el tamaño de los elementos en pantallas más pequeñas */
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sections {
+        gap: 10px;
+        flex-direction: column; /* Coloca los elementos en una sola columna en pantallas muy pequeñas */
+        margin-top: 30px;
+    }
+
+    .item {
+        flex: 1 1 auto;
+        margin-bottom: 20px; /* Añade margen inferior para separación en una columna */
+    }
+
+    .circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+    .cards__subtitle {
+        margin-right: 0; /* Alinea el texto a la izquierda en pantallas muy pequeñas */
+    }
+}

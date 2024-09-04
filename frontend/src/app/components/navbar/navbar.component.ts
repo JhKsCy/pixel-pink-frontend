@@ -10,43 +10,44 @@ import Swal from 'sweetalert2';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
   isScrolled = false;
-  hidden: boolean = true
-  
-  constructor(private cartService: CartService, private authsService: AuthService, private router: Router) {}
+  hidden: boolean = true;
+  isMobileMenuOpen: boolean = false; // Estado del menú móvil
 
+  constructor(
+    private cartService: CartService,
+    private authsService: AuthService,
+    private router: Router
+  ) {}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     this.isScrolled = window.scrollY > 10;
   }
-  
+
   ngOnInit(): void {
     this.onWindowScroll();
   }
-
 
   openSidenav() {
     this.cartService.toggleCart();
   }
 
   userInteraction(): void {
-    this.hidden = !this.hidden
+    this.hidden = !this.hidden;
   }
 
   get isLoggedIn(): boolean {
-    return this.authsService.isLoggedIn()
+    return this.authsService.isLoggedIn();
   }
 
   logout() {
     Swal.fire({
       title: "<strong>Hey!<strong>",
-      html: `
-      <p style="color: #939393;"> Estás seguro que quieres irte? </p>
-      `,
+      html: `<p style="color: #939393;"> Estás seguro que quieres irte? </p>`,
       showCancelButton: true,
       confirmButtonColor: "#939393",
       cancelButtonColor: "#ff4372",
@@ -58,8 +59,8 @@ export class NavbarComponent {
       width: 500,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.authsService.logout()
-        this.router.navigate(['/'])
+        this.authsService.logout();
+        this.router.navigate(['/']);
         Swal.fire({
           showConfirmButton: false,
           timer: 2000,
@@ -74,4 +75,8 @@ export class NavbarComponent {
     });
   }
 
+  // Método para abrir/cerrar el menú móvil
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 }

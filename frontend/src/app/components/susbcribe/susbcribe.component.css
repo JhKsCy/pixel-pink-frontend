@@ -91,3 +91,92 @@
     font-size: smaller;
     font-weight: bold;
 }
+@media (max-width: 768px) {
+    .suscribe {
+        grid-template-columns: 1fr;
+        height: auto;
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .suscribe__number {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .suscribe__number h2 {
+        font-size: 95px;
+        padding-left: 0;
+        top: 20px;
+        margin-bottom: 5%;
+    }
+
+    .suscribe__number img {
+        height: 120px;
+        top: -30px;
+        right: 0;
+        transform: rotate(90deg);
+        
+    }
+
+    .suscribe__info {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 20%;
+    }
+
+    .suscribe__info svg {
+        display: none; 
+    }
+
+    .suscribe__info h3 {
+        font-size: large;
+        top: 0;
+    }
+
+    .suscribe__info form {
+        position: relative;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .suscribe__info input {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .suscribe__info button {
+        font-size: 24px;
+        right: 10%;
+    }
+
+    .suscribe__info p, .suscribe__info span {
+        font-size: small;
+        top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .suscribe__number h2 {
+        font-size: 40px;
+    }
+
+    .suscribe__number img {
+        height: 80px;
+        
+    }
+
+    .suscribe__info h3 {
+        font-size: medium;
+    }
+
+    .suscribe__info input {
+        width: 90%;
+    }
+
+    .suscribe__info button {
+        font-size: 20px;
+    }
+}

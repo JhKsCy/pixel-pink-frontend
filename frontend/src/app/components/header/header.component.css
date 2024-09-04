@@ -47,3 +47,54 @@
     width: auto;
     object-fit: cover;
 }
+/* Media Queries para pantallas más pequeñas */
+
+/* Tablets y pantallas pequeñas */
+@media (max-width: 768px) {
+    .header {
+        height: 400px; 
+        margin-top: 30px; 
+        margin-bottom: -10px; 
+    }
+
+    .header__info {
+        font-size: 50px; 
+        top: -40px;
+    }
+
+    .header__info a {
+        font-size: 70px; 
+        top: 30%; 
+        left: 25%; 
+        line-height: 80px; 
+    }
+
+    .header__carrousel button {
+        width: 12%; 
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    .header {
+        height: 300px; 
+        margin-top: 20px; 
+        margin-bottom: 0; 
+    }
+
+    .header__info {
+        font-size: 30px; 
+        top: -20px;
+    }
+
+    .header__info a {
+        font-size: 40px; 
+        top: 25%; 
+        left: 20%; 
+        line-height: 50px; 
+    }
+
+    .header__carrousel button {
+        width: 15%; 
+    }
+}

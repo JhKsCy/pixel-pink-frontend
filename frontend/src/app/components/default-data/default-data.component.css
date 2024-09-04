@@ -119,3 +119,53 @@ body {
     color: #e91e84
     ;
 }
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%; 
+    }
+
+    .title {
+        font-size: 24px; 
+        margin: 10px 0; 
+    }
+
+    .name {
+        font-size: 20px; 
+    }
+
+    .line {
+        width: 80%; 
+        margin-left: 10px;
+    }
+
+    .actions {
+        flex-direction: column; 
+    }
+
+    .actions div {
+        width: 100%;
+        justify-content: center; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 20px;
+    }
+
+    .name {
+        font-size: 18px; 
+    }
+
+    .actions a {
+        font-size: 14px; 
+    }
+
+    .add-button {
+        width: 100%;
+        margin-right: 0; 
+    }
+}
