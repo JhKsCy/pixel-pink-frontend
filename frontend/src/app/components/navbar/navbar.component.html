@@ -1,10 +1,9 @@
 <nav class="navbar" id="navbar_container">
-
-<nav [ngClass]="{'navbar': true, 'scrolled': isScrolled}" id="navbar_container">
     <div class="navbar_icon">
-        <img src="https://jhkscy.github.io/pixel-pink/assets/img/icon-wb.png" alt="">
+        <img src="https://jhkscy.github.io/pixel-pink/assets/img/icon-wb.png" alt="Logo">
         <div class="icon">PIXEL<br>PINK</div>
     </div>
+
     <div class="navbar_menu">
         <div id="menu">
             <ul>
@@ -15,33 +14,42 @@
             </ul>
         </div>
     </div>
+
     <div class="navbar_buttons">
-        <div class="buttons">
-            <ul>
-                <li><a><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li><a (click)="openSidenav()"><i class="fa-solid fa-basket-shopping"></i></a></li>
-                <li><a (mouseenter)="userInteraction()"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li><a (click)="openSidenav()"><i class="fa-solid fa-basket-shopping"></i></a></li>
+            <li><a (mouseenter)="userInteraction()"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
     </div>
+
     <div class="navbar_buttons-User" [class.hidden]="hidden" (mouseleave)="userInteraction()">
         <ul *ngIf="!isLoggedIn">
-            <li>
-                <a routerLink="/login">Inicia sesión</a>
-            </li>
+            <li><a routerLink="/login">Inicia sesión</a></li>
             <div class="horizontal-bar"></div>
-            <li>
-                <a routerLink="/register">Regístrate</a>
-            </li>
+            <li><a routerLink="/register">Regístrate</a></li>
         </ul>
         <ul *ngIf="isLoggedIn">
             <li>
                 <a (click)="toData()">Tus datos</a>
             </li>
             <div class="horizontal-bar"></div>
-            <li>
-                <a (click)="logout()">Cerrar sesión</a>
-            </li>
+            <li><a (click)="logout()">Cerrar sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="menu-toggle" (click)="toggleMobileMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+        <ul>
+            <li><a routerLink="/" (click)="toggleMobileMenu()">Inicio</a></li>
+            <li><a routerLink="/category" (click)="toggleMobileMenu()">Categorías</a></li>
+            <li><a routerLink="/collection/Pink-Goth" (click)="toggleMobileMenu()">Última colección</a></li>
+            <li><a routerLink="/" (click)="toggleMobileMenu()">Preventa</a></li>
+            <li><a (click)="openSidenav()">Carrito</a></li>
+            <li><a (mouseenter)="userInteraction()">Usuario</a></li>
         </ul>
     </div>
 </nav>

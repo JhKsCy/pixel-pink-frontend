@@ -167,3 +167,72 @@
 .hidden {
     display: none
 }
+@media (max-width: 768px) {
+    .cards__title h2 {
+        font-size: 36px;
+    }
+
+    .cards__subtitle a {
+        font-size: 10px;
+    }
+
+    .card {
+        width: 13rem;
+        margin: 20px 0;
+    }
+
+    .card-body {
+        grid-template-columns: 2fr 1fr;
+        font-size: 10px;
+    }
+
+    .card-body button {
+        top: 250px;
+    }
+
+    .card-body__info-hover span {
+        width: 60%;
+        left: 20%;
+    }
+
+    .btn-view-hover {
+        width: 50%;
+        left: 25%;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    .cards__title h2 {
+        font-size: 28px;
+    }
+
+    .cards__subtitle a {
+        font-size: 8px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .card-body {
+        grid-template-columns: 1fr;
+        font-size: 8px;
+        padding: 0 5px;
+    }
+
+    .card-body button {
+        top: 180px;
+    }
+
+    .card-body__info-hover span {
+        width: 80%;
+        left: 10%;
+    }
+
+    .btn-view-hover {
+        width: 60%;
+        left: 20%;
+    }
+}

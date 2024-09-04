@@ -51,3 +51,18 @@
     width: auto;
     object-fit: cover;
 }
+
+@media (max-width: 520px) {
+    .header__collection a {
+        font-size: calc(110px * 0.8);
+        line-height: calc(135px * 0.8);
+        top: 30%;
+    }
+}
+@media (max-width: 420px) {
+    .header__collection a {
+        font-size: calc(110px * 0.6);
+        line-height: calc(135px * 0.6);
+        top: 35%;
+    }
+}

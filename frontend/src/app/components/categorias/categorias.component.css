@@ -78,3 +78,48 @@
 .selected__category {
     border: 5px solid #ff4372;
 }
+@media (max-width: 768px) {
+    .sections {
+        gap: 20px;
+        margin-top: 60px; 
+    }
+
+    .item {
+        flex: 1 1 150px;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sections {
+        gap: 10px;
+        flex-direction: column; 
+        margin-top: 30px;
+    }
+
+    .item {
+        flex: 1 1 auto;
+        margin-bottom: 20px;
+    }
+
+    .circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+    .cards__subtitle {
+        margin-right: 0; 
+    }
+}

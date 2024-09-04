@@ -106,3 +106,51 @@
         margin: 90px 1% 66px;
     }
 }
+
+@media (max-width: 768px) {
+    .sing-up {
+        height: auto; 
+        margin: 70px 10px; 
+        
+    }
+
+    .sing-up__title h2 {
+        font-size: large; 
+    }
+
+    .sing-up__form {
+        width: 90%;
+        padding-top: 20px; 
+    }
+
+    .sing-up__form input, .sing-up__form button {
+        width: 100%; 
+    }
+
+    .sing-up__logos {
+        font-size: x-large; 
+    }
+
+    .sing-up__logos i {
+        margin: 0 10px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .sing-up__title h2 {
+        font-size: medium; 
+    }
+
+    .sing-up__form {
+        width: 100%; 
+    }
+
+    .sing-up__form button {
+        font-size: small; 
+    }
+
+    .sing-up__logos {
+        font-size: large; 
+    }
+}

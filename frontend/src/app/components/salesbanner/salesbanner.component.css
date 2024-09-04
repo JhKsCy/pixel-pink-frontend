@@ -63,5 +63,59 @@
 @media screen and (max-width: 1050px) {
     .sales__star-button {
         display: none;
+        top: 32%;
+        right: 220%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sales {
+        height: 300px;
+        padding: 1%;
+        width: 100%;
+        margin: auto;
+    }
+    
+    .sales__star-button {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .sales__star-button p {
+        font-size: large;
+        top: -50%;
+        right: -5%;
+    }
+    
+    .sales a {
+        font-size: 60px;
+        top: 15%;
+        right: 50%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .sales {
+        height: 200px;
+        margin: 10px 1%;
+        padding: 0.5%;
+    }
+    
+    .sales__star-button {
+        height: 100px;
+        width: 100px;
+    }
+    
+    .sales__star-button p {
+        font-size: medium;
+        top: -40%;
+        right: -10%;
+    }
+    
+    .sales a {
+        font-size: 40px;
+        top: 10%;
+        right: 30%;
     }
 }
